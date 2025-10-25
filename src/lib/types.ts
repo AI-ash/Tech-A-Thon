@@ -31,3 +31,11 @@ export type Project = {
   image: string;
   githubLink: string;
 };
+
+export type Review = {
+  name: string;
+  position: string;
+  review: string;
+  rating: number;
+  image: string;
+};
