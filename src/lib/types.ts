@@ -39,3 +39,10 @@ export type Review = {
   rating: number;
   image: string;
 };
+
+export type Quote = {
+  quote: string;
+  author: string;
+};
+
+    

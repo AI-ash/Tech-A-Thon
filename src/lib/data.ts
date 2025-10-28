@@ -1,4 +1,4 @@
-import type { Event, TeamMember, Project, NavItem, Review } from "./types";
+import type { Event, TeamMember, Project, NavItem, Review, Quote } from "./types";
 
 export const navItems: NavItem[] = [
   { title: "About", href: "/about" },
@@ -165,3 +165,20 @@ export const reviews: Review[] = [
     image: "reviewer-3"
   }
 ];
+
+export const quotes: Quote[] = [
+  {
+    quote: "The best way to predict the future is to invent it.",
+    author: "Alan Kay"
+  },
+  {
+    quote: "Code is like humor. When you have to explain it, it’s bad.",
+    author: "Cory House"
+  },
+  {
+    quote: "The advance of technology is based on making it fit in so that you don't really even notice it, so it's part of everyday life.",
+    author: "Bill Gates"
+  }
+];
+
+    
