@@ -36,7 +36,10 @@ function ScrollingKeywords() {
 export default function Home() {
   const memberOfTheMonth = team.find(member => member.position === "President");
   const memberImage = placeholderData.placeholderImages.find(p => p.id === memberOfTheMonth?.image);
-  const highlightedEvents = events.slice(0, 3);
+  const highlightedEvents = events
+    .filter(event => new Date(event.date) < new Date())
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+    .slice(0, 3);
   
   return (
     <div className="flex flex-col items-center justify-center min-h-[calc(100vh-4rem)]">
@@ -74,10 +77,10 @@ export default function Home() {
         <div className="container px-4 md:px-6">
           <div className="text-center space-y-3 mb-12">
             <h2 className="text-3xl font-bold tracking-tighter font-headline md:text-4xl/tight">
-              Highlighted Events
+              Highlighted Past Events
             </h2>
             <p className="mx-auto max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed font-mono">
-              Check out some of our exciting upcoming events.
+              A look back at some of our successful events.
             </p>
           </div>
           <div className="grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
@@ -213,5 +216,3 @@ export default function Home() {
     </div>
   );
 }
-
-    
