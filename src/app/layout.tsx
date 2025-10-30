@@ -5,6 +5,7 @@ import Header from "@/components/layout/header";
 import Footer from "@/components/layout/footer";
 import "./globals.css";
 import { cn } from "@/lib/utils";
+import ClientLayout from "@/components/layout/client-layout";
 
 const orbitron = Orbitron({
   subsets: ["latin"],
@@ -35,12 +36,14 @@ export default function RootLayout({
           robotoMono.variable
         )}
       >
-        <div className="relative flex min-h-dvh flex-col bg-background">
-          <Header />
-          <main className="flex-1">{children}</main>
-          <Footer />
-        </div>
-        <Toaster />
+        <ClientLayout>
+          <div className="relative flex min-h-dvh flex-col bg-background">
+            <Header />
+            <main className="flex-1">{children}</main>
+            <Footer />
+          </div>
+          <Toaster />
+        </ClientLayout>
       </body>
     </html>
   );
