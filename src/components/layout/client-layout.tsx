@@ -3,38 +3,30 @@
 import { useState, useEffect } from "react";
 import PreLoader from "@/components/pre-loader";
 
-// Helper to check if the pre-loader has run in the current session
-const hasPreLoaderRun = () => {
-    if (typeof window === 'undefined') return false;
-    return window.sessionStorage.getItem("preLoaderHasRun") === "true";
-}
-
-// Helper to mark the pre-loader as having run
-const setPreLoaderHasRun = () => {
-    if (typeof window === 'undefined') return;
-    window.sessionStorage.setItem("preLoaderHasRun", "true");
-}
-
-
 export default function ClientLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  const [isLoading, setIsLoading] = useState(!hasPreLoaderRun());
+  const [showPreloader, setShowPreloader] = useState(true);
+  const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
-    if (isLoading) {
-      const timer = setTimeout(() => {
-        setIsLoading(false);
-        setPreLoaderHasRun();
-      }, 3000); // Adjust the duration as needed
+    setIsClient(true);
+    const preloaderRun = window.sessionStorage.getItem("preLoaderHasRun") === "true";
 
+    if (preloaderRun) {
+      setShowPreloader(false);
+    } else {
+      const timer = setTimeout(() => {
+        setShowPreloader(false);
+        window.sessionStorage.setItem("preLoaderHasRun", "true");
+      }, 3000); // Adjust the duration as needed
       return () => clearTimeout(timer);
     }
-  }, [isLoading]);
+  }, []);
 
-  if (isLoading) {
+  if (!isClient || showPreloader) {
     return <PreLoader />;
   }
 
