@@ -9,6 +9,7 @@ import Image from "next/image";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 
+
 const keywords = [
   "AI", "Web Dev", "Coding", "Hackathons", "Cybersecurity",
   "React", "Python", "Node.js", "Cloud", "DevOps",
@@ -33,14 +34,14 @@ function ScrollingKeywords() {
   );
 }
 
-export default function Home() {
+const Home = async() => {
   const memberOfTheMonth = team.find(member => member.position === "President");
   const memberImage = placeholderData.placeholderImages.find(p => p.id === memberOfTheMonth?.image);
   const highlightedEvents = events
     .filter(event => new Date(event.date) < new Date())
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
     .slice(0, 3);
-  
+  await new Promise((resolve) => setTimeout(resolve, 2500));
   return (
     <div className="flex flex-col items-center justify-center min-h-[calc(100vh-4rem)]">
       <section className="w-full py-20 md:py-32 lg:py-40">
@@ -216,3 +217,4 @@ export default function Home() {
     </div>
   );
 }
+export default Home;
