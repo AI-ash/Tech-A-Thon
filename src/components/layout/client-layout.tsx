@@ -2,28 +2,39 @@
 
 import { useState, useEffect } from "react";
 import PreLoader from "@/components/pre-loader";
-import { usePathname } from "next/navigation";
+
+// Helper to check if the pre-loader has run in the current session
+const hasPreLoaderRun = () => {
+    if (typeof window === 'undefined') return false;
+    return window.sessionStorage.getItem("preLoaderHasRun") === "true";
+}
+
+// Helper to mark the pre-loader as having run
+const setPreLoaderHasRun = () => {
+    if (typeof window === 'undefined') return;
+    window.sessionStorage.setItem("preLoaderHasRun", "true");
+}
+
 
 export default function ClientLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  const pathname = usePathname();
-  const isHome = pathname === "/";
-  const [isLoading, setIsLoading] = useState(isHome);
+  const [isLoading, setIsLoading] = useState(!hasPreLoaderRun());
 
   useEffect(() => {
     if (isLoading) {
       setTimeout(() => {
         setIsLoading(false);
+        setPreLoaderHasRun();
       }, 3000); // Adjust the duration as needed
     }
   }, [isLoading]);
 
   return (
     <>
-      {isLoading && isHome ? (
+      {isLoading ? (
         <PreLoader />
       ) : (
         children
