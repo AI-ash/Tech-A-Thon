@@ -25,20 +25,18 @@ export default function ClientLayout({
 
   useEffect(() => {
     if (isLoading) {
-      setTimeout(() => {
+      const timer = setTimeout(() => {
         setIsLoading(false);
         setPreLoaderHasRun();
       }, 3000); // Adjust the duration as needed
+
+      return () => clearTimeout(timer);
     }
   }, [isLoading]);
 
-  return (
-    <>
-      {isLoading ? (
-        <PreLoader />
-      ) : (
-        children
-      )}
-    </>
-  );
+  if (isLoading) {
+    return <PreLoader />;
+  }
+
+  return <>{children}</>;
 }
