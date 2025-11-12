@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Logo, IconGitHub, IconTwitter, IconLinkedIn } from "@/components/icons";
+import { Logo, IconInstagram, IconFacebook, IconLinkedIn } from "@/components/icons";
 
 export default function Footer() {
   return (
@@ -13,10 +13,10 @@ export default function Footer() {
         </div>
         <div className="flex items-center gap-4">
           <Link href="https://github.com" target="_blank" rel="noreferrer">
-            <IconGitHub className="h-6 w-6 text-muted-foreground transition-colors hover:text-primary" />
+            <IconInstagram className="h-6 w-6 text-muted-foreground transition-colors hover:text-primary" />
           </Link>
           <Link href="https://twitter.com" target="_blank" rel="noreferrer">
-            <IconTwitter className="h-6 w-6 text-muted-foreground transition-colors hover:text-primary" />
+            <IconFacebook className="h-6 w-6 text-muted-foreground transition-colors hover:text-primary" />
           </Link>
           <Link href="https://linkedin.com" target="_blank" rel="noreferrer">
             <IconLinkedIn className="h-6 w-6 text-muted-foreground transition-colors hover:text-primary" />
