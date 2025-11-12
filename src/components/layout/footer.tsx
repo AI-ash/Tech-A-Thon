@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Logo, IconInstagram, IconFacebook, IconLinkedIn } from "@/components/icons";
+import { Logo, IconInstagram, IconX, IconLinkedIn } from "@/components/icons";
 
 export default function Footer() {
   return (
@@ -12,13 +12,13 @@ export default function Footer() {
           </p>
         </div>
         <div className="flex items-center gap-4">
-          <Link href="https://github.com" target="_blank" rel="noreferrer">
+          <Link href="https://www.instagram.com/techathonarsd/" target="_blank" rel="noreferrer">
             <IconInstagram className="h-6 w-6 text-muted-foreground transition-colors hover:text-primary" />
           </Link>
-          <Link href="https://twitter.com" target="_blank" rel="noreferrer">
-            <IconFacebook className="h-6 w-6 text-muted-foreground transition-colors hover:text-primary" />
+          <Link href="https://x.com/techathonarsd/" target="_blank" rel="noreferrer">
+            <IconX className="h-6 w-6 text-muted-foreground transition-colors hover:text-primary" />
           </Link>
-          <Link href="https://linkedin.com" target="_blank" rel="noreferrer">
+          <Link href="https://www.linkedin.com/in/techathon-arsd-62995b268/" target="_blank" rel="noreferrer">
             <IconLinkedIn className="h-6 w-6 text-muted-foreground transition-colors hover:text-primary" />
           </Link>
         </div>

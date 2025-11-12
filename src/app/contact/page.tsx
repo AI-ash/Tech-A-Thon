@@ -1,7 +1,7 @@
 import { PageHeader } from "@/components/page-header";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Mail, MapPin, Phone } from "lucide-react";
-import { IconInstagram, IconLinkedIn, IconFacebook } from "@/components/icons";
+import { IconInstagram, IconLinkedIn, IconX } from "@/components/icons";
 import Link from "next/link";
 import placeholderData from "@/lib/placeholder-images.json";
 
@@ -78,7 +78,7 @@ export default function ContactPage() {
                 rel="noreferrer"
                 className="p-3 bg-secondary rounded-md hover:bg-primary/20 transition-colors"
               >
-                <IconFacebook className="h-6 w-6 text-primary" />
+                <IconX className="h-6 w-6 text-primary" />
               </Link>
               <Link
                 href="https://linkedin.com"

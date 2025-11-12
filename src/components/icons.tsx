@@ -36,7 +36,7 @@ export const IconInstagram = (props: SVGProps<SVGSVGElement>) => (
   </svg>
 );
 
-export const IconFacebook = (props: SVGProps<SVGSVGElement>) => (
+export const IconX = (props: SVGProps<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="24"
@@ -49,7 +49,11 @@ export const IconFacebook = (props: SVGProps<SVGSVGElement>) => (
     strokeLinejoin="round"
     {...props}
   >
-    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3.64L18 10h-4V7a1 1 0 0 1 1-1h3z" />
+    {/* Two diagonal strokes forming the "X" mark */}
+    <path d="M4.5 4.5 L19.5 19.5" />
+    <path d="M19.5 4.5 L4.5 19.5" />
+    {/* Slight stylistic taper for a more 'brand-like' look (subtle) */}
+    <path d="M7 3.5 L12 9.5 L17 3.5" opacity="0.0" />
   </svg>
 );
 
