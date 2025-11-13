@@ -1,0 +1,5 @@
+1. To add navbar items, event, gallery images, team details -----
+src -> lib -> data.ts
+
+2. To change header / footer 
+components -> layout
