@@ -3,11 +3,12 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter }
 import { ArrowRight, Star, Calendar, Quote, Trophy } from "lucide-react";
 import Link from "next/link";
 import { Logo } from "@/components/icons";
-import { reviews, events, team, quotes } from "@/lib/data";
+import { events, team, quotes } from "@/lib/data";
 import placeholderData from "@/lib/placeholder-images.json";
 import Image from "next/image";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
+
 
 const keywords = [
   "AI", "Web Dev", "Coding", "Hackathons", "Cybersecurity",
@@ -33,14 +34,13 @@ function ScrollingKeywords() {
   );
 }
 
-export default function Home() {
+const Home = async() => {
   const memberOfTheMonth = team.find(member => member.position === "President");
   const memberImage = placeholderData.placeholderImages.find(p => p.id === memberOfTheMonth?.image);
   const highlightedEvents = events
     .filter(event => new Date(event.date) < new Date())
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
     .slice(0, 3);
-  
   return (
     <div className="flex flex-col items-center justify-center min-h-[calc(100vh-4rem)]">
       <section className="w-full py-20 md:py-32 lg:py-40">
@@ -171,48 +171,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      <section className="w-full pb-20 md:pb-32 bg-secondary/50">
-        <div className="container px-4 md:px-6">
-          <div className="text-center space-y-3">
-            <h2 className="text-3xl font-bold tracking-tighter font-headline md:text-4xl/tight">
-              What Our Members Say
-            </h2>
-            <p className="mx-auto max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed font-mono">
-              Hear from the people who make our community great.
-            </p>
-          </div>
-          <div className="grid gap-6 mt-12 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-            {reviews.map((review) => {
-              const reviewerImage = placeholderData.placeholderImages.find(p => p.id === review.image);
-              return (
-                <Card key={review.name}>
-                  <CardHeader>
-                    <div className="flex items-center gap-4">
-                      <Avatar>
-                        {reviewerImage && <AvatarImage src={reviewerImage.imageUrl} alt={review.name} data-ai-hint={reviewerImage.imageHint} />}
-                        <AvatarFallback>{review.name.charAt(0)}</AvatarFallback>
-                      </Avatar>
-                      <div>
-                        <CardTitle className="text-base">{review.name}</CardTitle>
-                        <CardDescription className="text-sm">{review.position}</CardDescription>
-                      </div>
-                    </div>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="font-mono text-muted-foreground italic">"{review.review}"</p>
-                    <div className="flex mt-4">
-                      {Array.from({ length: 5 }).map((_, i) => (
-                        <Star key={i} className={`h-5 w-5 ${i < review.rating ? "text-yellow-400 fill-yellow-400" : "text-muted-foreground"}`} />
-                      ))}
-                    </div>
-                  </CardContent>
-                </Card>
-              );
-            })}
-          </div>
-        </div>
-      </section>
     </div>
   );
 }
+export default Home;

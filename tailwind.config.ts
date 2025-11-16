@@ -68,6 +68,10 @@ export default {
         sm: 'calc(var(--radius) - 4px)',
       },
       keyframes: {
+        "fill": {
+          '0%': { transform: 'translateX(-100%)' },
+          '100%': { transform: 'translateX(0%)' },
+          },
         'accordion-down': {
           from: {
             height: '0',
@@ -92,7 +96,8 @@ export default {
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
-        'scroll': 'scroll 40s linear infinite',
+        'scroll': 'scroll 40s ease-out infinite',
+         "fill": 'fill 2.5s linear',
       },
     },
   },

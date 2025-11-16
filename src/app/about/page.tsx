@@ -1,6 +1,5 @@
 import { PageHeader } from "@/components/page-header";
 import { Timeline } from "@/components/about/timeline";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { CheckCircle } from "lucide-react";
 import Image from "next/image";
 import placeholderData from "@/lib/placeholder-images.json";
