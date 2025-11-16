@@ -1,3 +1,11 @@
+# TechAthon - Computer Science Society Website
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/firebase/genkit/main/docs/static/logo.png" alt="Genkit Logo" width="120">
+</p>
+
+<h1 align="center">TechAthon</h1>
+
 # Tech-A-Thon - Computer Science Society Website
 
 <h1 align="center">Tech-A-Thon</h1>
@@ -7,6 +15,7 @@
 </p>
 
 <p align="center">
+  This is the official website for TechAthon, the Computer Science Department Society of Atma Ram Sanatan Dharma College. Built with a modern tech stack including Next.js, Tailwind CSS, and Google's Genkit for AI-powered features.
   This is the official website for Tech-A-Thon, the Computer Science Department Society of Atma Ram Sanatan Dharma College. Built with a modern tech stack including Next.js, Tailwind CSS, and Google's Genkit for AI-powered features.
 </p>
 
@@ -63,6 +72,7 @@ Clone the repository and install the dependencies.
 git clone <your-repository-url>
 
 # Navigate to the project directory
+cd techathon-website
 cd Tech-A-Thon-website
 
 # Install dependencies

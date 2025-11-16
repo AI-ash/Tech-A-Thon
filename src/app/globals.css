@@ -110,6 +110,21 @@ body {
     animation: glitch-anim2 5s infinite linear alternate-reverse;
   }
 
+  .animate-pulse-and-fade {
+    animation: pulse-and-fade 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse-and-fade {
+    0%, 100% {
+      transform: scale(0.95);
+      opacity: 0.8;
+    }
+    50% {
+      transform: scale(1.05);
+      opacity: 1;
+    }
+  }
+
   @keyframes glitch-anim {
     0% { clip: rect(42px, 9999px, 44px, 0); }
     5% { clip: rect(12px, 9999px, 64px, 0); }
