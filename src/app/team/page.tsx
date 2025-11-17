@@ -58,7 +58,6 @@ export default function TeamPage() {
       />
       <TeamSection title="Faculty Coordinators" members={faculty} />
       <TeamSection title="Core Team" members={coreTeam} />
-      <TeamSection title="Members" members={members} />
     </>
   );
 }

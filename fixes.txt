@@ -1,0 +1,12 @@
+1. Interactive Map Added
+2. Socials logo changed (No logo found for X.com)
+3. Member review section deleted from Home.
+4. Deleted footer from Contact
+5. Removed KshavCode's loadingAnimation
+6. Projects and Gallery removed from Navbar.
+7. Made rough changes like names.
+8. Linked socials to their respective accounts.
+9. Added Fixes.txt to note recent changes
+10. Added Details.txt to ease up navigation for changes.
+11. Added loading animation made by ai.
+12. Added loding animation to all pages.

@@ -1,6 +1,5 @@
 import { PageHeader } from "@/components/page-header";
 import { Timeline } from "@/components/about/timeline";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { CheckCircle } from "lucide-react";
 import Image from "next/image";
 import placeholderData from "@/lib/placeholder-images.json";
@@ -20,7 +19,7 @@ export default function AboutPage() {
     <>
       <PageHeader
         title="About Us"
-        description="We are TechAthon, the official Computer Science Department Society of Atma Ram Sanatan Dharma College. Our purpose is to inspire, innovate, and build the future of technology, one project at a time."
+        description="We are Tech-A-Thon, the official Computer Science Department Society of Atma Ram Sanatan Dharma College. Our purpose is to inspire, innovate, and build the future of technology, one project at a time."
       />
       <section className="container pb-16 md:pb-24">
         <div className="grid md:grid-cols-2 gap-8 lg:gap-12 items-center">
@@ -29,7 +28,7 @@ export default function AboutPage() {
               Our Vision & Mission
             </h2>
             <p className="text-muted-foreground font-mono">
-              At TechAthon, we are driven by a passion for technology and a
+              At Tech-A-Thon, we are driven by a passion for technology and a
               commitment to excellence. We aim to provide a dynamic environment
               where students can learn, collaborate, and grow as tech
               enthusiasts and future professionals.

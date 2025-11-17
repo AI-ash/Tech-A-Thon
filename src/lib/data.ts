@@ -4,17 +4,16 @@ export const navItems: NavItem[] = [
   { title: "About", href: "/about" },
   { title: "Events", href: "/events" },
   { title: "Team", href: "/team" },
-  { title: "Projects", href: "/projects" },
   { title: "Gallery", href: "/gallery" },
   { title: "Contact", href: "/contact" },
 ];
 
 export const events: Event[] = [
   {
-    title: "Hack-A-Thon 5.0",
-    date: "2024-10-26",
+    title: "CDAC VISIT'25",
+    date: "2025-11-13",
     description: "A 24-hour coding marathon to build innovative solutions.",
-    type: "Competition",
+    type: "Visit",
     image: "event-hackathon",
   },
   {
@@ -56,38 +55,45 @@ export const events: Event[] = [
 
 export const team: TeamMember[] = [
   {
-    name: "Dr. Anamika Gupta",
+    name: "Mr. Dharmendra Singh ",
     role: "Faculty Coordinator",
-    position: "Faculty Head",
+    position: "Association In-charge",
     bio: "Guiding the society with years of academic and research experience.",
     image: "team-faculty-1",
   },
   {
-    name: "Dr. Arvind Kumar",
+    name: "Mr. Mahesh Kumar ",
     role: "Faculty Coordinator",
-    position: "Faculty Advisor",
+    position: "Teacher In-charge",
     bio: "Providing mentorship and support for all technical activities.",
     image: "team-faculty-2",
   },
   {
-    name: "Rohan Sharma",
+    name: "Mr. Jag Mohan",
+    role: "Faculty Coordinator",
+    position: "Seminar In-charge",
+    bio: "Providing mentorship and support for all technical activities.",
+    image: "team-faculty-2",
+  },
+  {
+    name: "Aditi tripathi",
     role: "Core Team",
     position: "President",
     bio: "Leads the society's vision and manages overall operations.",
-    image: "team-core-1",
-  },
-  {
-    name: "Priya Singh",
-    role: "Core Team",
-    position: "Vice President",
-    bio: "Assists the President and oversees event management.",
     image: "team-core-3",
   },
   {
-    name: "Amit Patel",
+    name: "Saksham Raj",
+    role: "Core Team",
+    position: "Vice President",
+    bio: "Assists the President and oversees event management.",
+    image: "team-core-1",
+  },
+  {
+    name: "Ashish Sharma",
     role: "Core Team",
     position: "Technical Head",
-    bio: "Manages all technical projects and workshops for the society.",
+    bio: "He leads the society’s tech operations, ensures smooth events, and builds practical projects that strengthen Tech-A-Thon’s workflow.",
     image: "team-core-2",
   },
   {
@@ -96,45 +102,7 @@ export const team: TeamMember[] = [
     position: "Marketing Head",
     bio: "Handles social media presence and outreach programs.",
     image: "team-core-4",
-  },
-  {
-    name: "John Doe",
-    role: "Member",
-    position: "Web Developer",
-    bio: "Passionate about building beautiful and functional web applications.",
-    image: "team-core-2",
-  },
-  {
-    name: "Jane Smith",
-    role: "Member",
-    position: "AI/ML Enthusiast",
-    bio: "Exploring the frontiers of artificial intelligence and machine learning.",
-    image: "team-core-3",
-  },
-];
-
-export const projects: Project[] = [
-  {
-    title: "Jarvis AI Assistant",
-    description: "A voice-controlled AI assistant inspired by Iron Man's Jarvis, built using Python.",
-    tags: ["AI", "Python", "NLP"],
-    image: "project-jarvis",
-    githubLink: "https://github.com",
-  },
-  {
-    title: "Contract Farming Project",
-    description: "A web platform to connect farmers and corporations for contract farming, streamlining the agricultural supply chain.",
-    tags: ["Web", "React", "Node.js", "Firebase"],
-    image: "project-contract-farming",
-    githubLink: "https://github.com",
-  },
-  {
-    title: "Calcy",
-    description: "A modern, feature-rich calculator application for desktop with a sleek, intuitive UI.",
-    tags: ["Desktop", "Python", "GUI"],
-    image: "project-calcy",
-    githubLink: "https://github.com",
-  },
+  }
 ];
 
 export const galleryImages = [
@@ -145,20 +113,20 @@ export const galleryImages = [
 export const reviews: Review[] = [
   {
     name: "Aarav Kumar",
-    position: "2nd Year, B.Sc (H) CS",
+    position: "2nd Year, B.Sc Physical science with CS",
     review: "TechAthon has been a game-changer for me. The workshops are incredibly insightful and the community is super supportive.",
     rating: 5,
     image: "reviewer-1"
   },
   {
-    name: "Saanvi Chen",
+    name: "Saanvi Jha",
     position: "3rd Year, B.Sc (H) CS",
     review: "Being part of the core team taught me so much about leadership and project management. It's more than just a tech society.",
     rating: 5,
     image: "reviewer-2"
   },
   {
-    name: "Liam O'Brien",
+    name: "Aditya Rajput",
     position: "Alumnus",
     review: "The hands-on project experience I got at TechAthon was invaluable for my career. Highly recommend it to all students.",
     rating: 4,
@@ -180,5 +148,3 @@ export const quotes: Quote[] = [
     author: "Bill Gates"
   }
 ];
-
-    

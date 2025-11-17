@@ -8,13 +8,11 @@ import placeholderData from "@/lib/placeholder-images.json";
 import Image from "next/image";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
-
 const keywords = [
   "AI", "Web Dev", "Coding", "Hackathons", "Cybersecurity",
   "React", "Python", "Node.js", "Cloud", "DevOps",
   "Machine Learning", "Data Science", "UI/UX", "Blockchain"
 ];
-
 function ScrollingKeywords() {
   return (
     <div className="relative w-full max-w-4xl mx-auto overflow-hidden">
@@ -32,15 +30,14 @@ function ScrollingKeywords() {
     </div>
   );
 }
-
-export default function Home() {
+const Home = async() => {
   const memberOfTheMonth = team.find(member => member.position === "President");
   const memberImage = placeholderData.placeholderImages.find(p => p.id === memberOfTheMonth?.image);
   const highlightedEvents = events
     .filter(event => new Date(event.date) < new Date())
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
     .slice(0, 3);
-  
+  await new Promise((resolve) => setTimeout(resolve, 2500));
   return (
     <div className="flex flex-col items-center justify-center min-h-[calc(100vh-4rem)]">
       <section className="w-full py-20 md:py-32 lg:py-40">
@@ -49,8 +46,8 @@ export default function Home() {
             <div className="relative">
               <Logo className="h-24 w-24 text-primary glow" />
             </div>
-            <h1 className="font-headline text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl/none glitch-text" data-text="TechAthon">
-              TechAthon
+            <h1 className="font-headline text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl/none glitch-text" data-text="Tech-A-Thon">
+              Tech-A-Thon
             </h1>
             <p className="max-w-[700px] text-muted-foreground md:text-xl font-mono">
               Think. Build. Evolve.
@@ -66,7 +63,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       <section className="w-full pb-20 md:pb-32">
         <div className="container px-4 md:px-6">
           <ScrollingKeywords />
@@ -145,7 +141,6 @@ export default function Home() {
           )}
         </div>
       </section>
-
       <section className="w-full pb-20 md:pb-32">
         <div className="container px-4 md:px-6">
           <div className="text-center space-y-3 mb-12">
@@ -216,3 +211,4 @@ export default function Home() {
     </div>
   );
 }
+export default Home;
