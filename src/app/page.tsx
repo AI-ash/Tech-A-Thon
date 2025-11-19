@@ -49,8 +49,8 @@ const Home = async() => {
             <div className="relative">
               <Logo className="h-24 w-24 text-primary glow" />
             </div>
-            <h1 className="font-headline text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl/none glitch-text" data-text="TechAthon">
-              TechAthon
+            <h1 className="font-headline text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl/none glitch-text" data-text="Tech-A-Thon">
+              Tech-A-Thon
             </h1>
             <p className="max-w-[700px] text-muted-foreground md:text-xl font-mono">
               Think. Build. Evolve.

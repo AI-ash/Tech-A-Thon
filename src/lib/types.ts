@@ -22,6 +22,8 @@ export type TeamMember = {
   position: string;
   bio: string;
   image: string;
+  email?: string;
+  linkedin?: string;
 };
 
 export type Project = {
