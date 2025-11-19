@@ -47,7 +47,9 @@ const TeamCard = ({ member }: { member: TeamMember }) => {
               className="inline-flex items-center gap-2 rounded-md bg-secondary px-3 py-2 text-sm font-medium hover:bg-primary/20 transition-colors"
             >
               <Mail className="h-4 w-4 text-primary" />
-              <span>Email</span>
+              <span className="hidden sm:inline text-sm font-medium text-primary">
+                Email
+              </span>
             </Link>
           )}
 
@@ -59,7 +61,9 @@ const TeamCard = ({ member }: { member: TeamMember }) => {
               className="inline-flex items-center gap-2 rounded-md bg-secondary px-3 py-2 text-sm font-medium hover:bg-primary/20 transition-colors"
             >
               <IconLinkedIn className="h-4 w-4 text-primary" />
-              <span>LinkedIn</span>
+              <span className="hidden sm:inline text-sm font-medium text-primary">
+                LinkedIn
+              </span>
             </Link>
           )}
         </div>
