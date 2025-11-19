@@ -8,11 +8,14 @@ import placeholderData from "@/lib/placeholder-images.json";
 import Image from "next/image";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
+import { AnimatedSection } from "@/components/animated-section";
+
 const keywords = [
   "AI", "Web Dev", "Coding", "Hackathons", "Cybersecurity",
   "React", "Python", "Node.js", "Cloud", "DevOps",
   "Machine Learning", "Data Science", "UI/UX", "Blockchain"
 ];
+
 function ScrollingKeywords() {
   return (
     <div className="relative w-full max-w-4xl mx-auto overflow-hidden">
@@ -30,14 +33,15 @@ function ScrollingKeywords() {
     </div>
   );
 }
-const Home = async() => {
+
+const Home = () => {
   const memberOfTheMonth = team.find(member => member.position === "President");
   const memberImage = placeholderData.placeholderImages.find(p => p.id === memberOfTheMonth?.image);
   const highlightedEvents = events
     .filter(event => new Date(event.date) < new Date())
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
     .slice(0, 3);
-  await new Promise((resolve) => setTimeout(resolve, 2500));
+
   return (
     <div className="flex flex-col items-center justify-center min-h-[calc(100vh-4rem)]">
       <section className="w-full py-20 md:py-32 lg:py-40">
@@ -63,13 +67,14 @@ const Home = async() => {
           </div>
         </div>
       </section>
+
       <section className="w-full pb-20 md:pb-32">
         <div className="container px-4 md:px-6">
           <ScrollingKeywords />
         </div>
       </section>
       
-      <section className="w-full pb-20 md:pb-32">
+      <AnimatedSection className="w-full pb-20 md:pb-32">
         <div className="container px-4 md:px-6">
           <div className="text-center space-y-3 mb-12">
             <h2 className="text-3xl font-bold tracking-tighter font-headline md:text-4xl/tight">
@@ -107,9 +112,9 @@ const Home = async() => {
             })}
           </div>
         </div>
-      </section>
+      </AnimatedSection>
       
-      <section className="w-full pb-20 md:pb-32 bg-secondary/50">
+      <AnimatedSection className="w-full pb-20 md:pb-32 bg-secondary/50">
         <div className="container px-4 md:px-6">
           <div className="text-center space-y-3 mb-12">
             <h2 className="text-3xl font-bold tracking-tighter font-headline md:text-4xl/tight">
@@ -140,8 +145,9 @@ const Home = async() => {
             </Card>
           )}
         </div>
-      </section>
-      <section className="w-full pb-20 md:pb-32">
+      </AnimatedSection>
+
+      <AnimatedSection className="w-full pb-20 md:pb-32">
         <div className="container px-4 md:px-6">
           <div className="text-center space-y-3 mb-12">
             <h2 className="text-3xl font-bold tracking-tighter font-headline md:text-4xl/tight">
@@ -165,9 +171,9 @@ const Home = async() => {
              ))}
           </div>
         </div>
-      </section>
+      </AnimatedSection>
 
-      <section className="w-full pb-20 md:pb-32 bg-secondary/50">
+      <AnimatedSection className="w-full pb-20 md:pb-32 bg-secondary/50">
         <div className="container px-4 md:px-6">
           <div className="text-center space-y-3">
             <h2 className="text-3xl font-bold tracking-tighter font-headline md:text-4xl/tight">
@@ -207,7 +213,7 @@ const Home = async() => {
             })}
           </div>
         </div>
-      </section>
+      </AnimatedSection>
     </div>
   );
 }
