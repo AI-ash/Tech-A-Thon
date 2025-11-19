@@ -19,8 +19,8 @@ export function AnimatedSection({
     <section
       ref={ref}
       className={cn(
-        "transition-opacity duration-1000 ease-in-out motion-reduce:transition-none",
-        isInView ? "opacity-100" : "opacity-0",
+        "transition-all duration-1000 ease-out motion-reduce:transition-none",
+        isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8",
         className
       )}
       {...props}
