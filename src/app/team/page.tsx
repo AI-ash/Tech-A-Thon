@@ -1,5 +1,6 @@
 import { PageHeader } from "@/components/page-header";
-import { team, TeamMember } from "@/lib/data";
+import { team } from "@/lib/data";
+import { TeamMember } from "@/lib/types";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import Image from "next/image";
 import placeholderData from "@/lib/placeholder-images.json";
