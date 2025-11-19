@@ -59,6 +59,8 @@ export const team: TeamMember[] = [
     position: "Faculty Head",
     bio: "Guiding the society with years of academic and research experience.",
     image: "team-faculty-1",
+    email: "example@gmail.com",
+    linkedin: "https://linkedin.com/in/username",
   },
   {
     name: "Dr. Arvind Kumar",
@@ -66,6 +68,8 @@ export const team: TeamMember[] = [
     position: "Faculty Advisor",
     bio: "Providing mentorship and support for all technical activities.",
     image: "team-faculty-2",
+    email: "example@gmail.com",
+    linkedin: "https://linkedin.com/in/username",
   },
   {
     name: "Rohan Sharma",
@@ -73,6 +77,8 @@ export const team: TeamMember[] = [
     position: "President",
     bio: "Leads the society's vision and manages overall operations.",
     image: "team-core-1",
+    email: "example@gmail.com",
+    linkedin: "https://linkedin.com/in/username",
   },
   {
     name: "Priya Singh",
@@ -80,6 +86,8 @@ export const team: TeamMember[] = [
     position: "Vice President",
     bio: "Assists the President and oversees event management.",
     image: "team-core-3",
+    email: "example@gmail.com",
+    linkedin: "https://linkedin.com/in/username",
   },
   {
     name: "Amit Patel",
@@ -87,6 +95,8 @@ export const team: TeamMember[] = [
     position: "Technical Head",
     bio: "Manages all technical projects and workshops for the society.",
     image: "team-core-2",
+    email: "example@gmail.com",
+    linkedin: "https://linkedin.com/in/username",
   },
   {
     name: "Sunita Williams",
@@ -94,6 +104,8 @@ export const team: TeamMember[] = [
     position: "Marketing Head",
     bio: "Handles social media presence and outreach programs.",
     image: "team-core-4",
+    email: "example@gmail.com",
+    linkedin: "https://linkedin.com/in/username",
   },
   {
     name: "John Doe",
@@ -101,6 +113,8 @@ export const team: TeamMember[] = [
     position: "Web Developer",
     bio: "Passionate about building beautiful and functional web applications.",
     image: "team-core-2",
+    email: "example@gmail.com",
+    linkedin: "https://linkedin.com/in/username",
   },
   {
     name: "Jane Smith",
@@ -108,6 +122,8 @@ export const team: TeamMember[] = [
     position: "AI/ML Enthusiast",
     bio: "Exploring the frontiers of artificial intelligence and machine learning.",
     image: "team-core-3",
+    email: "example@gmail.com",
+    linkedin: "https://linkedin.com/in/username",
   },
 ];
 
