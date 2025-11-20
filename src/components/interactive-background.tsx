@@ -5,17 +5,10 @@ import { cn } from '@/lib/utils';
 
 // Helper function to get a value from CSS variables
 const getCssVar = (name: string) => {
-    if (typeof window === 'undefined') return 'rgba(0, 255, 200, 0.5)';
-    // In a browser environment, safely access document
+    if (typeof window === 'undefined') return '183 90% 50%'; // Fallback for server-side
     const rootStyle = getComputedStyle(document.documentElement);
     const value = rootStyle.getPropertyValue(name).trim();
-    // Fallback if the variable is not defined
-    if (value) {
-        // HSL values are just numbers, so we return them directly
-        return value;
-    }
-    // Default fallback color
-    return '183 90% 50%'; // default primary color
+    return value || '183 90% 50%'; // Default primary color
 };
 
 const InteractiveBackground = ({ className }: { className?: string }) => {
@@ -54,8 +47,8 @@ const InteractiveBackground = ({ className }: { className?: string }) => {
                 this.x = Math.random() * canvas.width;
                 this.y = Math.random() * canvas.height;
                 this.size = Math.random() * 2 + 1;
-                this.speedX = Math.random() * 2 - 1;
-                this.speedY = Math.random() * 2 - 1;
+                this.speedX = Math.random() * 1 - 0.5;
+                this.speedY = Math.random() * 1 - 0.5;
                 this.color = Math.random() > 0.5 ? primaryColor : accentColor;
             }
 
@@ -82,7 +75,7 @@ const InteractiveBackground = ({ className }: { className?: string }) => {
 
         const init = () => {
             particles = [];
-            const numberOfParticles = (canvas.width * canvas.height) / 9000;
+            const numberOfParticles = (canvas.width * canvas.height) / 12000;
             for (let i = 0; i < numberOfParticles; i++) {
                 particles.push(new Particle());
             }
@@ -96,9 +89,18 @@ const InteractiveBackground = ({ className }: { className?: string }) => {
                     let dy = particles[a].y - particles[b].y;
                     let distance = Math.sqrt(dx * dx + dy * dy);
 
-                    if (distance < 100) {
-                        opacityValue = 1 - (distance / 100);
-                        ctx.strokeStyle = `rgba(255,255,255,${opacityValue})`;
+                    if (distance < 120) {
+                        opacityValue = 1 - (distance / 120);
+                        const aColor = particles[a].color;
+                        const bColor = particles[b].color;
+                        
+                        // Create a gradient for the line
+                        const gradient = ctx.createLinearGradient(particles[a].x, particles[a].y, particles[b].x, particles[b].y);
+                        gradient.addColorStop(0, aColor);
+                        gradient.addColorStop(1, bColor);
+
+                        ctx.strokeStyle = gradient;
+                        ctx.globalAlpha = opacityValue;
                         ctx.lineWidth = 1;
                         ctx.beginPath();
                         ctx.moveTo(particles[a].x, particles[a].y);
@@ -107,6 +109,7 @@ const InteractiveBackground = ({ className }: { className?: string }) => {
                     }
                 }
             }
+            ctx.globalAlpha = 1;
         }
         
         const animate = () => {
@@ -124,14 +127,32 @@ const InteractiveBackground = ({ className }: { className?: string }) => {
         init();
         animate();
         
+        // Handle theme changes
+        const observer = new MutationObserver((mutations) => {
+            mutations.forEach((mutation) => {
+                if (mutation.attributeName === 'class') {
+                    // Re-initialize with new colors
+                    const newPrimary = `hsl(${getCssVar('--primary')})`;
+                    const newAccent = `hsl(${getCssVar('--accent')})`;
+                    particles.forEach(p => {
+                        p.color = Math.random() > 0.5 ? newPrimary : newAccent;
+                    });
+                }
+            });
+        });
+
+        observer.observe(document.documentElement, { attributes: true });
+
+
         return () => {
             window.removeEventListener('resize', resizeCanvas);
             cancelAnimationFrame(animationFrameId);
+            observer.disconnect();
         };
 
     }, []);
 
-    return <canvas ref={canvasRef} className={cn('absolute inset-0 -z-10 h-full w-full', className)} />;
+    return <canvas ref={canvasRef} className={cn('absolute inset-0 -z-10 h-full w-full opacity-50', className)} />;
 };
 
 export default InteractiveBackground;

@@ -47,7 +47,7 @@ const Home = () => {
     <div className="flex flex-col items-center justify-center min-h-[calc(100vh-4rem)]">
       <section className="relative w-full py-20 md:py-32 lg:py-40 overflow-hidden">
         <InteractiveBackground />
-        <div className="container px-4 md:px-6">
+        <div className="container px-4 md:px-6 z-10 relative">
           <div className="flex flex-col items-center space-y-6 text-center">
             <div className="relative">
               <Logo className="h-24 w-24 text-primary glow" />
