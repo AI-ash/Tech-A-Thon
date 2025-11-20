@@ -9,6 +9,7 @@ import Image from "next/image";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { AnimatedSection } from "@/components/animated-section";
+import InteractiveBackground from "@/components/interactive-background";
 
 const keywords = [
   "AI", "Web Dev", "Coding", "Hackathons", "Cybersecurity",
@@ -44,7 +45,8 @@ const Home = () => {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-[calc(100vh-4rem)]">
-      <section className="w-full py-20 md:py-32 lg:py-40">
+      <section className="relative w-full py-20 md:py-32 lg:py-40 overflow-hidden">
+        <InteractiveBackground />
         <div className="container px-4 md:px-6">
           <div className="flex flex-col items-center space-y-6 text-center">
             <div className="relative">
