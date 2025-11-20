@@ -60,6 +60,8 @@ export const team: TeamMember[] = [
     position: "Association In-charge",
     bio: "Guiding the society with years of academic and research experience.",
     image: "team-faculty-1",
+    email: "example@gmail.com",
+    linkedin: "https://linkedin.com/in/username",
   },
   {
     name: "Mr. Mahesh Kumar ",
@@ -67,6 +69,8 @@ export const team: TeamMember[] = [
     position: "Teacher In-charge",
     bio: "Providing mentorship and support for all technical activities.",
     image: "team-faculty-2",
+    email: "example@gmail.com",
+    linkedin: "https://linkedin.com/in/username",
   },
   {
     name: "Mr. Jag Mohan",
@@ -74,6 +78,8 @@ export const team: TeamMember[] = [
     position: "Seminar In-charge",
     bio: "Providing mentorship and support for all technical activities.",
     image: "team-faculty-2",
+    email: "example@gmail.com",
+    linkedin: "https://linkedin.com/in/username",
   },
   {
     name: "Aditi tripathi",
@@ -81,6 +87,8 @@ export const team: TeamMember[] = [
     position: "President",
     bio: "Leads the society's vision and manages overall operations.",
     image: "team-core-3",
+    email: "example@gmail.com",
+    linkedin: "https://linkedin.com/in/username",
   },
   {
     name: "Saksham Raj",
@@ -88,6 +96,8 @@ export const team: TeamMember[] = [
     position: "Vice President",
     bio: "Assists the President and oversees event management.",
     image: "team-core-1",
+    email: "example@gmail.com",
+    linkedin: "https://linkedin.com/in/username",
   },
   {
     name: "Ashish Sharma",
@@ -95,13 +105,17 @@ export const team: TeamMember[] = [
     position: "Technical Head",
     bio: "He leads the society’s tech operations, ensures smooth events, and builds practical projects that strengthen Tech-A-Thon’s workflow.",
     image: "team-core-2",
+    email: "example@gmail.com",
+    linkedin: "https://linkedin.com/in/username",
   },
   {
-    name: "Sunita Williams",
+    name: "Janvi ",
     role: "Core Team",
     position: "Marketing Head",
     bio: "Handles social media presence and outreach programs.",
     image: "team-core-4",
+    email: "example@gmail.com",
+    linkedin: "https://linkedin.com/in/username",
   }
 ];
 

@@ -4,6 +4,7 @@ import { Mail, MapPin, Phone } from "lucide-react";
 import { IconInstagram, IconLinkedIn, IconX } from "@/components/icons";
 import Link from "next/link";
 import placeholderData from "@/lib/placeholder-images.json";
+import { AnimatedSection } from "@/components/animated-section";
 
 const contactDetails = [
   {
@@ -36,7 +37,7 @@ export default function ContactPage() {
         title="Contact Us"
         description="Have a question or want to collaborate? We'd love to hear from you. Reach out through any of the channels below."
       />
-      <section className="container pb-16 md:pb-24">
+      <AnimatedSection className="container pb-16 md:pb-24">
         <div className="grid lg:grid-cols-2 gap-12">
           <div className="space-y-8">
             {contactDetails.map((detail) => (
@@ -104,7 +105,7 @@ export default function ContactPage() {
             </CardContent>
           </Card>
         </div>
-      </section>
+      </AnimatedSection>
     </>
   );
 }

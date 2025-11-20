@@ -3,6 +3,7 @@ import { Timeline } from "@/components/about/timeline";
 import { CheckCircle } from "lucide-react";
 import Image from "next/image";
 import placeholderData from "@/lib/placeholder-images.json";
+import { AnimatedSection } from "@/components/animated-section";
 
 const vision = [
   "To foster a culture of innovation and collaboration.",
@@ -21,7 +22,7 @@ export default function AboutPage() {
         title="About Us"
         description="We are Tech-A-Thon, the official Computer Science Department Society of Atma Ram Sanatan Dharma College. Our purpose is to inspire, innovate, and build the future of technology, one project at a time."
       />
-      <section className="container pb-16 md:pb-24">
+      <AnimatedSection className="container pb-16 md:pb-24">
         <div className="grid md:grid-cols-2 gap-8 lg:gap-12 items-center">
           <div className="space-y-4">
             <h2 className="font-headline text-2xl md:text-3xl font-bold">
@@ -57,9 +58,9 @@ export default function AboutPage() {
             <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent" />
           </div>
         </div>
-      </section>
+      </AnimatedSection>
 
-      <section className="container pb-16 md:pb-24">
+      <AnimatedSection className="container pb-16 md:pb-24">
         <div className="text-center mb-12">
           <h2 className="font-headline text-3xl font-bold">Our Journey</h2>
           <p className="text-muted-foreground font-mono mt-2">
@@ -67,7 +68,7 @@ export default function AboutPage() {
           </p>
         </div>
         <Timeline />
-      </section>
+      </AnimatedSection>
     </>
   );
 }

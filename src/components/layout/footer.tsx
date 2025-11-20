@@ -110,7 +110,7 @@ export default function TechAthonFooter() {
           <div className="flex flex-col gap-4">
             <div className="flex items-center gap-3">
               <Logo className="h-10 w-10 text-primary" />
-              <span className="text-lg font-semibold">Tech-A-Thon Society</span>
+              <span className="text-lg font-semibold">Tech-A-Thon</span>
             </div>
             <p className="text-sm leading-relaxed text-muted-foreground font-mono">
               Empowering students through technology, innovation, and
@@ -252,7 +252,7 @@ export default function TechAthonFooter() {
 
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-border/40 pt-8 md:flex-row">
           <p className="text-center text-sm leading-loose text-muted-foreground font-mono md:text-left">
-            © {currentYear} Tech-A-Thon Society. All rights reserved.
+            © {currentYear} Tech-A-Thon All rights reserved.
           </p>
 
           <div className="flex items-center gap-4">

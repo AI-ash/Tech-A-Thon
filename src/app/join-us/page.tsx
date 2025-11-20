@@ -2,6 +2,7 @@ import { PageHeader } from "@/components/page-header";
 import { JoinUsForm } from "@/components/join-us/join-us-form";
 import { Card, CardContent } from "@/components/ui/card";
 import { Lightbulb, Users, Zap } from "lucide-react";
+import { AnimatedSection } from "@/components/animated-section";
 
 export default function JoinUsPage() {
   return (
@@ -10,7 +11,7 @@ export default function JoinUsPage() {
         title="Join Us"
         description="Become a part of our growing community of innovators, creators, and leaders. Fill out the form below to start your journey with TechAthon."
       />
-      <section className="container pb-16 md:pb-24">
+      <AnimatedSection className="container pb-16 md:pb-24">
         <div className="grid lg:grid-cols-2 gap-12">
           <div className="flex flex-col justify-center space-y-6">
             <h2 className="font-headline text-3xl font-bold">Why Join TechAthon?</h2>
@@ -47,7 +48,7 @@ export default function JoinUsPage() {
             </CardContent>
           </Card>
         </div>
-      </section>
+      </AnimatedSection>
     </>
   );
 }

@@ -2,6 +2,7 @@ import { PageHeader } from "@/components/page-header";
 import { galleryImages } from "@/lib/data";
 import placeholderData from "@/lib/placeholder-images.json";
 import Image from "next/image";
+import { AnimatedSection } from "@/components/animated-section";
 
 export default function GalleryPage() {
   return (
@@ -10,7 +11,7 @@ export default function GalleryPage() {
         title="Gallery"
         description="A visual journey through our events, workshops, and memorable moments. This is the life of TechAthon in pictures."
       />
-      <section className="container pb-16 md:pb-24">
+      <AnimatedSection className="container pb-16 md:pb-24">
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {galleryImages.map((id, index) => {
             const image = placeholderData.placeholderImages.find(p => p.id === id);
@@ -32,7 +33,7 @@ export default function GalleryPage() {
             ) : null;
           })}
         </div>
-      </section>
+      </AnimatedSection>
     </>
   );
 }
