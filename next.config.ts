@@ -9,6 +9,7 @@ const nextConfig: NextConfig = {
     ignoreDuringBuilds: true,
   },
   images: {
+    domains: ['drive.google.com'],
     remotePatterns: [
       {
         protocol: 'https',
@@ -24,6 +25,12 @@ const nextConfig: NextConfig = {
       },
       {
         protocol: 'https',
+        hostname: 'drive.google.com',
+        port: '',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
         hostname: 'picsum.photos',
         port: '',
         pathname: '/**',
@@ -34,6 +41,7 @@ const nextConfig: NextConfig = {
         port: '',
         pathname: '/**',
       },
+      
     ],
   },
 };

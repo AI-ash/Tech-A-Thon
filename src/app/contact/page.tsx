@@ -98,7 +98,7 @@ export default function ContactPage() {
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3503.2780667457946!2d77.16464607613621!3d28. 591433785944727!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13. 1!3m3!1m2!1s0x390d1d3cf842aa09%3A0x7c2d506edd36b06f!2sAtma%20Ram%20Sanatan%20Dharma%20College!5e0!3m2!1sen!2sin!4v1762937025445!5m2! 1sen!2sin"
                   width="600"
-                  height="450"
+                  height="300"
                   loading="lazy"
                 ></iframe>
               </div>

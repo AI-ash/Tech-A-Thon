@@ -69,8 +69,8 @@
     {
       "id": "team-core-4",
       "description": "Portrait of a core team member",
-      "imageUrl": "https://images.unsplash.com/photo-1562124638-724e13052daf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxtYW4lMjBzbWlsaW5nfGVufDB8fHx8MTc2MTM0ODcxMXww&ixlib-rb-4.1.0&q=80&w=1080",
-      "imageHint": "man smiling"
+      "imageUrl": "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxtYW4lMjBwb3J0cmFpdHxlbnwwfHx8fDE3NjEzODc4Mjl8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "man portrait"
     },
     {
       "id": "project-jarvis",
@@ -117,7 +117,7 @@
     {
       "id": "gallery-5",
       "description": "Photo from a society event",
-      "imageUrl": "https://images.unsplash.com/photo-1589395937658-0557e7d89fad?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8c3R1ZGVudHMlMjBsZWFybmluZ3xlbnwwfHx8fDE3NjEzNTkzODh8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1589395937658-0557e7d89fad?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8c3R1ZGVudHMlMjBsZWFybmluZ3xlbnwwfHx8fDE3NjEzNTkzODh8MA&ixlib-rb-4.1.0&q=80&w=1080",
       "imageHint": "students learning"
     },
     {
@@ -129,7 +129,7 @@
     {
       "id": "gallery-7",
       "description": "Photo from a society event",
-      "imageUrl": "https://images.unsplash.com/photo-1594122230689-45899d9e6f69?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxhd2FyZCUyMGNlcmVtb255fGVufDB8fHx8MTc2MTM5NDMwNnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1594122230689-45899d9e6f69?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxhd2FyZCUyMGNlcmVtb255fGVufDB8fHx8MTc2MTM5NDMwNnww&ixlib-rb-4.1.0&q=80&w=1080",
       "imageHint": "award ceremony"
     },
     {
