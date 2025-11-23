@@ -49,6 +49,12 @@
       "imageHint": "teacher smiling"
     },
     {
+      "id": "team-faculty-3",
+      "description": "Portrait of a faculty coordinator",
+      "imageUrl": "https://images.unsplash.com/photo-1758685848226-eedca8f6bce7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHx0ZWFjaGVyJTIwc21pbGluZ3xlbnwwfHx8fDE3NjEzNTM4MDZ8MA&ixlibrb-4.1.0&q=80&w=1080",
+      "imageHint": "teacher smiling"
+    },
+    {
       "id": "team-core-1",
       "description": "Portrait of a core team member",
       "imageUrl": "https://images.unsplash.com/photo-1522529599102-193c0d76b5b6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxzdHVkZW50JTIwcG9ydHJhaXR8ZW58MHx8fHwxNzYxMzkzODUzfDA&ixlib=rb-4.1.0&q=80&w=1080",
@@ -123,7 +129,7 @@
     {
       "id": "gallery-6",
       "description": "Photo from a society event",
-      "imageUrl": "https://images.unsplash.com/photo-1568992687947-868a62a9f521?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxncm91cCUyMGRpc2N1c3Npb258ZW58MHx8fHwxNzYxMzQ0MjM3fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1568992687947-868a62a9f521?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxncm91cCUyMGRpc2N1c3Npb258ZW58MHx8fHwxNzYxMzQ0MjM3fDA&ixlib-rb-4.1.0&q=80&w=1080",
       "imageHint": "group discussion"
     },
     {
@@ -141,19 +147,19 @@
     {
       "id": "reviewer-1",
       "description": "Portrait of a happy student",
-      "imageUrl": "https://images.unsplash.com/photo-1581009137052-c0b3887a1339?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxtYWxlJTIwc3R1ZGVudCUyMHBvcnRyYWl0fGVufDB8fHx8MTc2MTM5Mzk1MXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1581009137052-c0b3887a1339?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxtYWxlJTIwc3R1ZGVudCUyMHBvcnRyYWl0fGVufDB8fHx8MTc2MTM5Mzk1MXww&ixlib-rb-4.1.0&q=80&w=1080",
       "imageHint": "student portrait"
     },
     {
       "id": "reviewer-2",
       "description": "Portrait of a smiling student",
-      "imageUrl": "https://images.unsplash.com/photo-1580489944761-15a19d654956?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxwb3J0cmFpdCUyMHdvbWFufGVufDB8fHx8MTc2MTM0OTk5OHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1580489944761-15a19d654956?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxwb3J0cmFpdCUyMHdvbWFufGVufDB8fHx8MTc2MTM0OTk5OHww&ixlib-rb-4.1.0&q=80&w=1080",
       "imageHint": "woman portrait"
     },
     {
       "id": "reviewer-3",
       "description": "Portrait of a professional person",
-      "imageUrl": "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxtYW4lMjBwb3J0cmFpdHxlbnwwfHx8fDE3NjEzODc4Mjl8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxtYW4lMjBwb3J0cmFpdHxlbnwwfHx8fDE3NjEzODc4Mjl8MA&ixlib-rb-4.1.0&q=80&w=1080",
       "imageHint": "man portrait"
     }
   ]

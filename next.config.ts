@@ -23,8 +23,8 @@ const nextConfig: NextConfig = {
         pathname: '/**',
       },
       {
-        protocol: 'https_uc',
-        hostname: 'google.com',
+        protocol: 'https',
+        hostname: 'drive.google.com',
         port: '',
         pathname: '/**',
       },
@@ -42,8 +42,6 @@ const nextConfig: NextConfig = {
       },
       
     ],
-    loader: 'default',
-    loaderFile: './src/lib/gdrive-loader.ts',
   },
 };
 

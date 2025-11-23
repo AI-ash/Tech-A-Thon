@@ -77,7 +77,7 @@ export const team: TeamMember[] = [
     role: "Faculty Coordinator",
     position: "Seminar In-charge",
     bio: "Providing mentorship and support for all technical activities.",
-    image: "team-faculty-2",
+    image: "team-faculty-3",
     email: "example@gmail.com",
     linkedin: "https://linkedin.com/in/username",
   },
