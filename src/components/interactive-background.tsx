@@ -31,35 +31,35 @@ export default function InteractiveBackground({
   const rafRef = useRef<number | null>(null);
   const cursor = useRef<{ x: number | null; y: number | null }>({ x: null, y: null });
   const particlesRef = useRef<Particle[]>([]);
-  const DPR = useRef<number>(1);
 
   useEffect(() => {
-    DPR.current = typeof window !== 'undefined' ? window.devicePixelRatio || 1 : 1;
     const canvas = canvasRef.current;
     if (!canvas) return;
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
-    // helpers
+    let DPR = window.devicePixelRatio || 1;
+    const isMobile = window.innerWidth < 640;
+    const count = isMobile ? Math.floor(particleCount * 0.5) : particleCount;
+
     const rand = (min: number, max: number) => Math.random() * (max - min) + min;
-    const isMobile = typeof window !== 'undefined' && window.innerWidth < 640;
-    const count = isMobile ? Math.max(40, Math.floor(particleCount * 0.5)) : particleCount;
 
-    function setSize() {
-      DPR.current = Math.max(1, window.devicePixelRatio || 1);
-      const w = canvas.clientWidth;
-      const h = canvas.clientHeight;
-      canvas.width = Math.floor(w * DPR.current);
-      canvas.height = Math.floor(h * DPR.current);
-      // map drawing to CSS pixels
-      if (ctx) {
-        ctx.setTransform(DPR.current, 0, 0, DPR.current, 0, 0);
+    const setSize = () => {
+      DPR = window.devicePixelRatio || 1;
+      if (canvasRef.current) {
+        const w = canvasRef.current.clientWidth;
+        const h = canvasRef.current.clientHeight;
+        canvasRef.current.width = Math.floor(w * DPR);
+        canvasRef.current.height = Math.floor(h * DPR);
+        if (ctx) {
+          ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+        }
       }
-    }
+    };
 
-    function makeParticles() {
-      const w = canvas.clientWidth;
-      const h = canvas.clientHeight;
+    const makeParticles = () => {
+      const w = canvas?.clientWidth ?? 0;
+      const h = canvas?.clientHeight ?? 0;
       const particles: Particle[] = [];
       for (let i = 0; i < count; i++) {
         particles.push({
@@ -72,10 +72,10 @@ export default function InteractiveBackground({
         });
       }
       particlesRef.current = particles;
-    }
+    };
 
-    function drawBackground() {
-      if (!ctx) return;
+    const drawBackground = () => {
+      if (!ctx || !canvas) return;
       const w = canvas.clientWidth;
       const h = canvas.clientHeight;
       const g = ctx.createLinearGradient(0, 0, w, h);
@@ -84,10 +84,10 @@ export default function InteractiveBackground({
       g.addColorStop(1, 'rgba(2,6,16,1)');
       ctx.fillStyle = g;
       ctx.fillRect(0, 0, w, h);
-    }
+    };
 
-    function step() {
-      if (!ctx) return;
+    const step = () => {
+      if (!ctx || !canvas) return;
       const w = canvas.clientWidth;
       const h = canvas.clientHeight;
       ctx.clearRect(0, 0, w, h);
@@ -96,13 +96,10 @@ export default function InteractiveBackground({
 
       const particles = particlesRef.current;
 
-      // update particles
       for (const p of particles) {
-        // slight pulsing
         const sizeChange = Math.sin(Date.now() * 0.002 + p.x) * 0.004;
-        p.size = Math.max(0.1, p.size + sizeChange); // Ensure size is always positive
+        p.size = Math.max(0.1, p.size + sizeChange);
 
-        // cursor influence
         if (cursor.current.x !== null && cursor.current.y !== null) {
           const dx = p.x - cursor.current.x;
           const dy = p.y - cursor.current.y;
@@ -115,21 +112,17 @@ export default function InteractiveBackground({
           }
         }
 
-        // slow drift
         p.vx += rand(-0.003, 0.003);
         p.vy += rand(-0.003, 0.003);
-
         p.x += p.vx;
         p.y += p.vy;
 
-        // wrap-around
         if (p.x < -10) p.x = w + 10;
         if (p.x > w + 10) p.x = -10;
         if (p.y < -10) p.y = h + 10;
         if (p.y > h + 10) p.y = -10;
       }
 
-      // connections
       for (let i = 0; i < particles.length; i++) {
         const a = particles[i];
         for (let j = i + 1; j < particles.length; j++) {
@@ -141,14 +134,14 @@ export default function InteractiveBackground({
           if (d2 < lineThreshold * lineThreshold) {
             let alpha = 1 - Math.sqrt(d2) / lineThreshold;
 
-            if (cursor.current.x !== null && cursor.current.y !== null) {
+            if (cursor.current.x !== null) {
               const cdx = (a.x + b.x) / 2 - cursor.current.x;
-              const cdy = (a.y + b.y) / 2 - cursor.current.y;
+              const cdy = (a.y + b.y) / 2 - cursor.current.y!;
               const cd = Math.sqrt(cdx * cdx + cdy * cdy);
               if (cd < cursorRadius) alpha *= 1.8;
             }
 
-            ctx.strokeStyle = `rgba(0, 255, 255, ${alpha * 0.3})`;
+            ctx.strokeStyle = `rgba(0,255,255,${alpha * 0.3})`;
             ctx.lineWidth = 0.6;
             ctx.beginPath();
             ctx.moveTo(a.x, a.y);
@@ -158,15 +151,14 @@ export default function InteractiveBackground({
         }
       }
 
-      // particle glow
       for (const p of particles) {
-        // safe hex to rgb (assumes #RRGGBB)
+        if (p.size <= 0) continue;
         const hex = p.hue.startsWith('#') ? p.hue : '#7DF9FF';
         const r = parseInt(hex.slice(1, 3), 16);
         const g = parseInt(hex.slice(3, 5), 16);
         const b = parseInt(hex.slice(5, 7), 16);
-        
-        if (isNaN(r) || isNaN(g) || isNaN(b)) continue; // Skip if color is invalid
+
+        if (isNaN(r) || isNaN(g) || isNaN(b)) continue;
 
         const glow = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, p.size * 6);
         glow.addColorStop(0, `rgba(${r},${g},${b},0.9)`);
@@ -178,7 +170,7 @@ export default function InteractiveBackground({
       }
 
       rafRef.current = requestAnimationFrame(step);
-    }
+    };
 
     setSize();
     makeParticles();
@@ -187,10 +179,8 @@ export default function InteractiveBackground({
     const handlePointerMove = (e: PointerEvent) => {
       if (!canvasRef.current) return;
       const rect = canvasRef.current.getBoundingClientRect();
-      const clientX = e.clientX ?? (e as any).pageX;
-      const clientY = e.clientY ?? (e as any).pageY;
-      cursor.current.x = (clientX - rect.left);
-      cursor.current.y = (clientY - rect.top);
+      cursor.current.x = e.clientX - rect.left;
+      cursor.current.y = e.clientY - rect.top;
     };
 
     const handlePointerLeave = () => {
@@ -203,16 +193,14 @@ export default function InteractiveBackground({
       makeParticles();
     };
 
-    canvas.addEventListener('pointermove', handlePointerMove);
-    canvas.addEventListener('pointerleave', handlePointerLeave);
+    window.addEventListener('pointermove', handlePointerMove);
+    window.addEventListener('pointerleave', handlePointerLeave);
     window.addEventListener('resize', handleWindowResize);
 
     return () => {
       if (rafRef.current) cancelAnimationFrame(rafRef.current);
-      if (canvas) {
-        canvas.removeEventListener('pointermove', handlePointerMove);
-        canvas.removeEventListener('pointerleave', handlePointerLeave);
-      }
+      window.removeEventListener('pointermove', handlePointerMove);
+      window.removeEventListener('pointerleave', handlePointerLeave);
       window.removeEventListener('resize', handleWindowResize);
     };
   }, [particleCount, colorPalette, lineThreshold, cursorRadius]);
