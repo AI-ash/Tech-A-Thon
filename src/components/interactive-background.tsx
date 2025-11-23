@@ -141,7 +141,7 @@ export default function InteractiveBackground({
           if (d2 < lineThreshold * lineThreshold) {
             let alpha = 1 - Math.sqrt(d2) / lineThreshold;
 
-            if (cursor.current.x !== null) {
+            if (cursor.current.x !== null && cursor.current.y !== null) {
               const cdx = (a.x + b.x) / 2 - cursor.current.x;
               const cdy = (a.y + b.y) / 2 - cursor.current.y;
               const cd = Math.sqrt(cdx * cdx + cdy * cdy);

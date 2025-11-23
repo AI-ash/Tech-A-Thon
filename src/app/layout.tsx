@@ -18,8 +18,8 @@ const robotoMono = Roboto_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "TechAthon - Computer Science Department Society",
-  description: "TechAthon is the official Computer Science Department Society of Atma Ram Sanatan Dharma College. Think. Build. Evolve.",
+  title: "Tech-A-Thon - Computer Science Department Society",
+  description: "Tech-A-Thon is the official Computer Science Department Society of Atma Ram Sanatan Dharma College. Think. Build. Evolve.",
 };
 
 export default function RootLayout({
