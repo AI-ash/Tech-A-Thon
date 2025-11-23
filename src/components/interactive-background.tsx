@@ -38,22 +38,19 @@ export default function InteractiveBackground({
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
-    let DPR = window.devicePixelRatio || 1;
     const isMobile = window.innerWidth < 640;
     const count = isMobile ? Math.floor(particleCount * 0.5) : particleCount;
 
     const rand = (min: number, max: number) => Math.random() * (max - min) + min;
-
+    
     const setSize = () => {
-      DPR = window.devicePixelRatio || 1;
-      if (canvasRef.current) {
-        const w = canvasRef.current.clientWidth;
-        const h = canvasRef.current.clientHeight;
-        canvasRef.current.width = Math.floor(w * DPR);
-        canvasRef.current.height = Math.floor(h * DPR);
-        if (ctx) {
-          ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
-        }
+      const DPR = window.devicePixelRatio || 1;
+      const w = canvas.clientWidth;
+      const h = canvas.clientHeight;
+      if (canvas.width !== w * DPR || canvas.height !== h * DPR) {
+        canvas.width = w * DPR;
+        canvas.height = h * DPR;
+        ctx.scale(DPR, DPR);
       }
     };
 
