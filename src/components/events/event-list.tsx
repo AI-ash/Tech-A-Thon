@@ -75,7 +75,7 @@ function EventCard({ event }: { event: Event }) {
       <CardContent>
         <div className="flex items-center text-sm text-muted-foreground gap-2 font-mono">
             <Calendar className="h-4 w-4"/>
-            <span>{new Date(event.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
+            <span>{event.date}</span>
         </div>
       </CardContent>
       <CardFooter className="flex justify-between">

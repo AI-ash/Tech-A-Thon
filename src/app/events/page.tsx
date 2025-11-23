@@ -8,7 +8,7 @@ export default function EventsPage() {
     <>
       <PageHeader
         title="Events"
-        description="From competitive hackathons to insightful seminars, explore the events that define the TechAthon experience."
+        description="From competitive hackathons to insightful seminars, explore the events that define the Tech-A-Thon experience."
       />
       <AnimatedSection className="container pb-16 md:pb-24">
         <EventList events={events} />

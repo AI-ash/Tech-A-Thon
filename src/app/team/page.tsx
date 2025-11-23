@@ -4,7 +4,6 @@ import { TeamMember } from "@/lib/types";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import Image from "next/image";
 import placeholderData from "@/lib/placeholder-images.json";
-import { Badge } from "@/components/ui/badge";
 import { AnimatedSection } from "@/components/animated-section";
 
 import Link from "next/link";
@@ -97,13 +96,12 @@ const TeamSection = ({
 export default function TeamPage() {
   const faculty = team.filter((m) => m.role === "Faculty Coordinator");
   const coreTeam = team.filter((m) => m.role === "Core Team");
-  const members = team.filter((m) => m.role === "Member");
 
   return (
     <>
       <PageHeader
         title="Our Team"
-        description="Meet the brilliant minds behind TechAthon - the students, mentors, and faculty who drive our community forward."
+        description="Meet the brilliant minds behind Tech-A-Thon - the students, mentors, and faculty who drive our community forward."
       />
 
       <TeamSection title="Faculty Coordinators" members={faculty} />
