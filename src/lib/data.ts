@@ -165,6 +165,13 @@ export const team: TeamMember[] = [
   },
 ];
 
+export const memberOfTheMonth = {
+  name: "Ashish Sharma",
+  position: "Technical Head",
+  bio: "He leads the society’s tech operations, ensures smooth events, and builds practical projects that strengthen Tech-A-Thon’s workflow.",
+  image: "ashish",
+};
+
 export const galleryImages = [
   "gallery-1", "gallery-2", "gallery-3", "gallery-4",
   "gallery-5", "gallery-6", "gallery-7", "gallery-8"

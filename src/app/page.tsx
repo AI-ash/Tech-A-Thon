@@ -3,7 +3,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter }
 import { ArrowRight, Star, Calendar, Quote, Trophy } from "lucide-react";
 import Link from "next/link";
 import { Logo } from "@/components/icons";
-import { reviews, events, team, quotes } from "@/lib/data";
+import { reviews, events, memberOfTheMonth, quotes } from "@/lib/data";
 import placeholderData from "@/lib/placeholder-images.json";
 import Image from "next/image";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
@@ -36,7 +36,6 @@ function ScrollingKeywords() {
 }
 
 const Home = () => {
-  const memberOfTheMonth = team.find(member => member.position === "Technical Head");
   const memberImage = placeholderData.placeholderImages.find(p => p.id === memberOfTheMonth?.image);
   const highlightedEvents = events
     .filter(event => new Date(event.date) < new Date())
@@ -50,7 +49,7 @@ const Home = () => {
         <div className="container px-4 md:px-6 z-10 relative">
           <div className="flex flex-col items-center space-y-6 text-center">
             <div className="relative">
-              <Logo className="h-64 w-64 text-primary glow" />
+              <Logo className="h-32 w-32 text-primary glow" />
             </div>
             <h1 className="font-headline text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl/none glitch-text" data-text="Tech-A-Thon">
               Tech-A-Thon
