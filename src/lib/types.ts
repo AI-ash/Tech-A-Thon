@@ -26,13 +26,6 @@ export type TeamMember = {
   linkedin?: string;
 };
 
-export type Project = {
-  title: string;
-  description: string;
-  tags: string[];
-  image: string;
-  githubLink: string;
-};
 
 export type Review = {
   name: string;
