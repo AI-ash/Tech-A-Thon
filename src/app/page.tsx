@@ -36,7 +36,7 @@ function ScrollingKeywords() {
 }
 
 const Home = () => {
-  const memberOfTheMonth = team.find(member => member.position === "President");
+  const memberOfTheMonth = team.find(member => member.position === "Technical Head");
   const memberImage = placeholderData.placeholderImages.find(p => p.id === memberOfTheMonth?.image);
   const highlightedEvents = events
     .filter(event => new Date(event.date) < new Date())
