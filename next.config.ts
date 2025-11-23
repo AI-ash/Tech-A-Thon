@@ -9,7 +9,6 @@ const nextConfig: NextConfig = {
     ignoreDuringBuilds: true,
   },
   images: {
-    domains: ['drive.google.com'],
     remotePatterns: [
       {
         protocol: 'https',
@@ -24,8 +23,8 @@ const nextConfig: NextConfig = {
         pathname: '/**',
       },
       {
-        protocol: 'https',
-        hostname: 'drive.google.com',
+        protocol: 'https_uc',
+        hostname: 'google.com',
         port: '',
         pathname: '/**',
       },
@@ -43,6 +42,8 @@ const nextConfig: NextConfig = {
       },
       
     ],
+    loader: 'default',
+    loaderFile: './src/lib/gdrive-loader.ts',
   },
 };
 
