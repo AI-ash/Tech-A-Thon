@@ -38,11 +38,6 @@ export default function InteractiveBackground({
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
-    const isMobile = window.innerWidth < 640;
-    const count = isMobile ? Math.floor(particleCount * 0.5) : particleCount;
-
-    const rand = (min: number, max: number) => Math.random() * (max - min) + min;
-    
     const setSize = () => {
       const DPR = window.devicePixelRatio || 1;
       const w = canvas.clientWidth;
@@ -54,12 +49,14 @@ export default function InteractiveBackground({
       }
     };
 
+    const rand = (min: number, max: number) => Math.random() * (max - min) + min;
+
     const makeParticles = () => {
       const w = canvas?.clientWidth ?? 0;
       const h = canvas?.clientHeight ?? 0;
-      const particles: Particle[] = [];
-      for (let i = 0; i < count; i++) {
-        particles.push({
+      const newParticles: Particle[] = [];
+      for (let i = 0; i < particleCount; i++) {
+        newParticles.push({
           x: rand(0, w),
           y: rand(0, h),
           vx: rand(-0.18, 0.18),
@@ -68,7 +65,7 @@ export default function InteractiveBackground({
           hue: colorPalette[Math.floor(Math.random() * colorPalette.length)],
         });
       }
-      particlesRef.current = particles;
+      particlesRef.current = newParticles;
     };
 
     const drawBackground = () => {
@@ -150,7 +147,8 @@ export default function InteractiveBackground({
 
       for (const p of particles) {
         if (p.size <= 0) continue;
-        const hex = p.hue.startsWith('#') ? p.hue : '#7DF9FF';
+        
+        const hex = p.hue;
         const r = parseInt(hex.slice(1, 3), 16);
         const g = parseInt(hex.slice(3, 5), 16);
         const b = parseInt(hex.slice(5, 7), 16);
