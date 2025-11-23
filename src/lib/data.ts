@@ -1,4 +1,4 @@
-import type { Event, TeamMember, Project, NavItem, Review, Quote } from "./types";
+import type { Event, TeamMember, NavItem, Review, Quote } from "./types";
 
 export const navItems: NavItem[] = [
   { title: "About", href: "/about" },
@@ -12,7 +12,7 @@ export const events: Event[] = [
   {
     title: "CDAC VISIT'25",
     date: "2025-11-13",
-    description: "A 24-hour coding marathon to build innovative solutions.",
+    description: "An educational visit to CDAC Noida, giving students real-world exposure to indigenous research, advanced development practices, and India’s evolving electronics and computing ecosystem.",
     type: "Visit",
     image: "event-hackathon",
   },

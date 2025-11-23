@@ -11,6 +11,15 @@ type TechBackgroundProps = {
   className?: string;
 };
 
+type Particle = {
+  x: number;
+  y: number;
+  vx: number;
+  vy: number;
+  size: number;
+  hue: string;
+};
+
 export default function InteractiveBackground({
   particleCount = 90,
   colorPalette = ['#7DF9FF', '#39FF14', '#F000FF'],
@@ -18,52 +27,55 @@ export default function InteractiveBackground({
   cursorRadius = 160,
   className,
 }: TechBackgroundProps) {
-  const canvasRef = useRef<HTMLCanvasElement>(null);
+  const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const rafRef = useRef<number | null>(null);
   const cursor = useRef<{ x: number | null; y: number | null }>({ x: null, y: null });
+  const particlesRef = useRef<Particle[]>([]);
+  const DPR = useRef<number>(1);
 
   useEffect(() => {
+    DPR.current = typeof window !== 'undefined' ? window.devicePixelRatio || 1 : 1;
     const canvas = canvasRef.current;
     if (!canvas) return;
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
-    let DPR = Math.max(1, window.devicePixelRatio || 1);
+    // helpers
+    const rand = (min: number, max: number) => Math.random() * (max - min) + min;
+    const isMobile = typeof window !== 'undefined' && window.innerWidth < 640;
+    const count = isMobile ? Math.max(40, Math.floor(particleCount * 0.5)) : particleCount;
 
-    function resize() {
-      if (!canvas) return;
+    function setSize() {
+      DPR.current = Math.max(1, window.devicePixelRatio || 1);
       const w = canvas.clientWidth;
       const h = canvas.clientHeight;
-      canvas.width = Math.floor(w * DPR);
-      canvas.height = Math.floor(h * DPR);
+      canvas.width = Math.floor(w * DPR.current);
+      canvas.height = Math.floor(h * DPR.current);
+      // map drawing to CSS pixels
       if (ctx) {
-        ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+        ctx.setTransform(DPR.current, 0, 0, DPR.current, 0, 0);
       }
     }
 
-    const isMobile = window.innerWidth < 640;
-    const count = isMobile ? Math.max(40, Math.floor(particleCount * 0.5)) : particleCount;
-    const particles: any[] = [];
-
-    const rand = (min: number, max: number) => Math.random() * (max - min) + min;
-
     function makeParticles() {
-      if (!canvas) return;
-      particles.length = 0;
+      const w = canvas.clientWidth;
+      const h = canvas.clientHeight;
+      const particles: Particle[] = [];
       for (let i = 0; i < count; i++) {
         particles.push({
-          x: rand(0, canvas.clientWidth),
-          y: rand(0, canvas.clientHeight),
+          x: rand(0, w),
+          y: rand(0, h),
           vx: rand(-0.18, 0.18),
           vy: rand(-0.18, 0.18),
           size: rand(1, 2.8),
           hue: colorPalette[Math.floor(Math.random() * colorPalette.length)],
         });
       }
+      particlesRef.current = particles;
     }
 
     function drawBackground() {
-      if (!canvas || !ctx) return;
+      if (!ctx) return;
       const w = canvas.clientWidth;
       const h = canvas.clientHeight;
       const g = ctx.createLinearGradient(0, 0, w, h);
@@ -75,16 +87,22 @@ export default function InteractiveBackground({
     }
 
     function step() {
-        if (!canvas || !ctx) return;
+      if (!ctx) return;
       const w = canvas.clientWidth;
       const h = canvas.clientHeight;
       ctx.clearRect(0, 0, w, h);
 
       drawBackground();
 
-      for (let p of particles) {
-        p.size += Math.sin(Date.now() * 0.002 + p.x) * 0.004;
+      const particles = particlesRef.current;
 
+      // update particles
+      for (const p of particles) {
+        // slight pulsing
+        const sizeChange = Math.sin(Date.now() * 0.002 + p.x) * 0.004;
+        p.size = Math.max(0.1, p.size + sizeChange); // Ensure size is always positive
+
+        // cursor influence
         if (cursor.current.x !== null && cursor.current.y !== null) {
           const dx = p.x - cursor.current.x;
           const dy = p.y - cursor.current.y;
@@ -97,17 +115,21 @@ export default function InteractiveBackground({
           }
         }
 
+        // slow drift
         p.vx += rand(-0.003, 0.003);
         p.vy += rand(-0.003, 0.003);
+
         p.x += p.vx;
         p.y += p.vy;
 
+        // wrap-around
         if (p.x < -10) p.x = w + 10;
         if (p.x > w + 10) p.x = -10;
         if (p.y < -10) p.y = h + 10;
         if (p.y > h + 10) p.y = -10;
       }
 
+      // connections
       for (let i = 0; i < particles.length; i++) {
         const a = particles[i];
         for (let j = i + 1; j < particles.length; j++) {
@@ -121,12 +143,12 @@ export default function InteractiveBackground({
 
             if (cursor.current.x !== null) {
               const cdx = (a.x + b.x) / 2 - cursor.current.x;
-              const cdy = (a.y + b.y) / 2 - cursor.current.y!;
+              const cdy = (a.y + b.y) / 2 - cursor.current.y;
               const cd = Math.sqrt(cdx * cdx + cdy * cdy);
               if (cd < cursorRadius) alpha *= 1.8;
             }
 
-            ctx.strokeStyle = `rgba(125, 249, 255, ${alpha * 0.3})`; // Using primary color
+            ctx.strokeStyle = `rgba(0, 255, 255, ${alpha * 0.3})`;
             ctx.lineWidth = 0.6;
             ctx.beginPath();
             ctx.moveTo(a.x, a.y);
@@ -136,13 +158,18 @@ export default function InteractiveBackground({
         }
       }
 
-      for (let p of particles) {
+      // particle glow
+      for (const p of particles) {
+        // safe hex to rgb (assumes #RRGGBB)
+        const hex = p.hue.startsWith('#') ? p.hue : '#7DF9FF';
+        const r = parseInt(hex.slice(1, 3), 16);
+        const g = parseInt(hex.slice(3, 5), 16);
+        const b = parseInt(hex.slice(5, 7), 16);
+        
+        if (isNaN(r) || isNaN(g) || isNaN(b)) continue; // Skip if color is invalid
+
         const glow = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, p.size * 6);
-        // A simple way to convert hex to rgba for the glow effect
-        const r = parseInt(p.hue.slice(1, 3), 16);
-        const g = parseInt(p.hue.slice(3, 5), 16);
-        const b = parseInt(p.hue.slice(5, 7), 16);
-        glow.addColorStop(0, `rgba(${r}, ${g}, ${b}, 0.9)`);
+        glow.addColorStop(0, `rgba(${r},${g},${b},0.9)`);
         glow.addColorStop(1, 'rgba(0,0,0,0)');
         ctx.fillStyle = glow;
         ctx.beginPath();
@@ -153,48 +180,46 @@ export default function InteractiveBackground({
       rafRef.current = requestAnimationFrame(step);
     }
 
-    const handleMouseMove = (e: MouseEvent) => {
-      if (!canvas) return;
-      const rect = canvas.getBoundingClientRect();
-      cursor.current.x = e.clientX - rect.left;
-      cursor.current.y = e.clientY - rect.top;
-    };
-
-    const handleMouseLeave = () => {
-      cursor.current.x = null;
-      cursor.current.y = null;
-    };
-    
-    const handleResize = () => {
-        DPR = Math.max(1, window.devicePixelRatio || 1);
-        resize();
-        makeParticles();
-    }
-    
-    resize();
+    setSize();
     makeParticles();
     step();
 
-    window.addEventListener('mousemove', handleMouseMove);
-    window.addEventListener('mouseleave', handleMouseLeave);
-    window.addEventListener('resize', handleResize);
+    const handlePointerMove = (e: PointerEvent) => {
+      if (!canvasRef.current) return;
+      const rect = canvasRef.current.getBoundingClientRect();
+      const clientX = e.clientX ?? (e as any).pageX;
+      const clientY = e.clientY ?? (e as any).pageY;
+      cursor.current.x = (clientX - rect.left);
+      cursor.current.y = (clientY - rect.top);
+    };
+
+    const handlePointerLeave = () => {
+      cursor.current.x = null;
+      cursor.current.y = null;
+    };
+
+    const handleWindowResize = () => {
+      setSize();
+      makeParticles();
+    };
+
+    canvas.addEventListener('pointermove', handlePointerMove);
+    canvas.addEventListener('pointerleave', handlePointerLeave);
+    window.addEventListener('resize', handleWindowResize);
 
     return () => {
-      if (rafRef.current) {
-        cancelAnimationFrame(rafRef.current);
+      if (rafRef.current) cancelAnimationFrame(rafRef.current);
+      if (canvas) {
+        canvas.removeEventListener('pointermove', handlePointerMove);
+        canvas.removeEventListener('pointerleave', handlePointerLeave);
       }
-      window.removeEventListener('mousemove', handleMouseMove);
-      window.removeEventListener('mouseleave', handleMouseLeave);
-      window.removeEventListener('resize', handleResize);
+      window.removeEventListener('resize', handleWindowResize);
     };
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [particleCount, colorPalette.join(','), lineThreshold, cursorRadius]);
+  }, [particleCount, colorPalette, lineThreshold, cursorRadius]);
 
   return (
-    <div className={cn('absolute inset-0 -z-10 h-full w-full opacity-50', className)}>
+    <div className={cn('absolute inset-0 -z-10 h-full w-full opacity-60', className)}>
       <canvas ref={canvasRef} className="w-full h-full block" />
     </div>
   );
 }
-
-    
