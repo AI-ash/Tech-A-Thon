@@ -37,6 +37,54 @@
       "imageHint": "graphic design"
     },
     {
+      "id": "cdac main",
+      "description": "A creative tech-themed poster design",
+      "imageUrl": "https://raw.githubusercontent.com/AI-ash/Tech-A-Thon-Photos/main/Events/CDAC%20visit'25/main.jpg",
+      "imageHint": "graphic design"
+    },
+    {
+      "id": "poster main",
+      "description": "A creative tech-themed poster design",
+      "imageUrl": "https://raw.githubusercontent.com/AI-ash/Tech-A-Thon-Photos/main/Events/Poster%20MAking%20Competition/main.jpg",
+      "imageHint": "graphic design"
+    },
+    {
+      "id": "drone main",
+      "description": "A creative tech-themed poster design",
+      "imageUrl": "https://raw.githubusercontent.com/AI-ash/Tech-A-Thon-Photos/main/Events/AI%20driven%20drone/main.jpg",
+      "imageHint": "graphic design"
+    },
+    {
+      "id": "ar main",
+      "description": "A creative tech-themed poster design",
+      "imageUrl": "https://raw.githubusercontent.com/AI-ash/Tech-A-Thon-Photos/main/Events/AI%20x%20AR%20workshop/main_(copy).jpg",
+      "imageHint": "graphic design"
+    },
+    {
+      "id": "ml main",
+      "description": "A creative tech-themed poster design",
+      "imageUrl": "https://raw.githubusercontent.com/AI-ash/Tech-A-Thon-Photos/main/Events/ml%20workshop/ml%20d1.jpg",
+      "imageHint": "graphic design"
+    },
+    {
+      "id": "data main",
+      "description": "A creative tech-themed poster design",
+      "imageUrl": "https://raw.githubusercontent.com/AI-ash/Tech-A-Thon-Photos",
+      "imageHint": "graphic design"
+    },
+    {
+      "id": "fact main",
+      "description": "A creative tech-themed poster design",
+      "imageUrl": "https://raw.githubusercontent.com/AI-ash/Tech-A-Thon-Photos",
+      "imageHint": "graphic design"
+    },
+    {
+      "id": "research main",
+      "description": "A creative tech-themed poster design",
+      "imageUrl": "https://raw.githubusercontent.com/AI-ash/Tech-A-Thon-Photos/main/Events/Iot/iot%20main.JPG",
+      "imageHint": "graphic design"
+    },
+    {
       "id": "team-faculty-1",
       "description": "Portrait of a faculty coordinator",
       "imageUrl": "https://images.unsplash.com/photo-1615502589469-8c9d26f6d63d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxwcm9mZXNzb3IlMjBwb3J0cmFpdHxlbnwwfHx8fDE3NjEzODc4Mjl8MA&ixlib=rb-4.1.0&q=80&w=1080",

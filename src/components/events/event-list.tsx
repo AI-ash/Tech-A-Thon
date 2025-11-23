@@ -4,13 +4,10 @@ import { useState } from "react";
 import Image from "next/image";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Badge } from "@/components/ui/badge";
 import type { Event, EventType } from "@/lib/types";
 import placeholderData from "@/lib/placeholder-images.json";
-import { Calendar, GalleryHorizontal } from "lucide-react";
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "../ui/carousel";
-import { galleryImages } from "@/lib/data";
+import { Calendar } from "lucide-react";
 
 const eventTypes: EventType[] = ["Competition", "Seminar", "Workshop", "Visit"];
 
@@ -56,7 +53,7 @@ function EventCard({ event }: { event: Event }) {
   const eventImage = placeholderData.placeholderImages.find(p => p.id === event.image);
 
   return (
-    <Card>
+    <Card className="flex flex-col">
       <CardHeader>
         {eventImage && (
           <div className="relative h-48 w-full mb-4">
@@ -72,53 +69,15 @@ function EventCard({ event }: { event: Event }) {
         <CardTitle>{event.title}</CardTitle>
         <CardDescription>{event.description}</CardDescription>
       </CardHeader>
-      <CardContent>
-        <div className="flex items-center text-sm text-muted-foreground gap-2 font-mono">
-            <Calendar className="h-4 w-4"/>
-            <span>{event.date}</span>
+      <CardContent className="flex-grow flex flex-col justify-end">
+        <div className="flex items-center justify-between text-sm text-muted-foreground gap-2 font-mono mt-4">
+            <div className="flex items-center gap-2">
+                <Calendar className="h-4 w-4"/>
+                <span>{event.date}</span>
+            </div>
+            <Badge variant="secondary">{event.type}</Badge>
         </div>
       </CardContent>
-      <CardFooter className="flex justify-between">
-        <Badge variant="secondary">{event.type}</Badge>
-        <EventGalleryDialog />
-      </CardFooter>
     </Card>
   );
-}
-
-function EventGalleryDialog() {
-    return (
-        <Dialog>
-            <DialogTrigger asChild>
-                <Button variant="outline" size="sm">
-                    <GalleryHorizontal className="mr-2 h-4 w-4" />
-                    View Gallery
-                </Button>
-            </DialogTrigger>
-            <DialogContent className="max-w-3xl">
-                <DialogHeader>
-                    <DialogTitle>Event Highlights</DialogTitle>
-                    <DialogDescription>
-                        A glimpse into the event.
-                    </DialogDescription>
-                </DialogHeader>
-                <Carousel>
-                    <CarouselContent>
-                        {galleryImages.slice(0, 5).map(id => {
-                            const image = placeholderData.placeholderImages.find(p => p.id === id);
-                            return image ? (
-                                <CarouselItem key={id}>
-                                    <div className="relative h-96 w-full">
-                                        <Image src={image.imageUrl} alt={image.description} fill className="object-cover rounded-lg" data-ai-hint={image.imageHint} />
-                                    </div>
-                                </CarouselItem>
-                            ) : null
-                        })}
-                    </CarouselContent>
-                    <CarouselPrevious />
-                    <CarouselNext />
-                </Carousel>
-            </DialogContent>
-        </Dialog>
-    )
 }
