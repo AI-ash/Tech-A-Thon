@@ -140,7 +140,7 @@ export const team: TeamMember[] = [
     role: "Core Team",
     position: "Sponsorship Head",
     bio: "Introducing Ananya, our Sponsorship Head — confident, responsible, and focused on building strong partnerships and securing valuable opportunities for the society.",
-    image: "team-core-3",
+    image: "team-core-4",
     email: "mishraananya389@gmail.com",
     linkedin: "https://linkedin.com/in/ananya-mishra-5287a432a",
   },
