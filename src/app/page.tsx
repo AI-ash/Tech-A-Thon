@@ -50,7 +50,7 @@ const Home = () => {
         <div className="container px-4 md:px-6 z-10 relative">
           <div className="flex flex-col items-center space-y-6 text-center">
             <div className="relative">
-              <Logo className="h-32 w-32 text-primary glow" />
+              <Logo className="h-64 w-64 text-primary glow" />
             </div>
             <h1 className="font-headline text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl/none glitch-text" data-text="Tech-A-Thon">
               Tech-A-Thon

@@ -13,9 +13,9 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-16 max-w-screen-2xl items-center">
+      <div className="container flex h-20 items-center">
         <Link href="/" className="mr-6 flex items-center space-x-2">
-          <Logo className="h-10 w-10 text-primary" />
+          <Logo className="h-24 w-24 text-primary" />
           <span className="font-bold font-headline">Tech-A-Thon</span>
         </Link>
         <nav className="hidden flex-1 gap-6 text-sm font-medium md:flex">
