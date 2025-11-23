@@ -55,25 +55,55 @@
       "imageHint": "teacher smiling"
     },
     {
-      "id": "team-core-1",
+      "id": "aditi",
       "description": "Portrait of a core team member",
-      "imageUrl": "https://images.unsplash.com/photo-1522529599102-193c0d76b5b6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxzdHVkZW50JTIwcG9ydHJhaXR8ZW58MHx8fHwxNzYxMzkzODUzfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://raw.githubusercontent.com/AI-ash/Tech-A-Thon-Photos/main/Teams/IMG-20251022-WA0012%20-%20ADITI%20TRIPATHI.jpg",
       "imageHint": "student portrait"
     },
     {
-      "id": "team-core-2",
+      "id": "saksham",
       "description": "Portrait of a core team member",
-      "imageUrl": "https://images.unsplash.com/photo-1605711285791-0219e80e43a3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxwZXJzb24lMjBjb2Rpbmd8ZW58MHx8fHwxNzYxMjk5MDY4fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://raw.githubusercontent.com/AI-ash/Tech-A-Thon-Photos/main/Teams/SAKSHAM%20RAJ.jpg",
       "imageHint": "person coding"
     },
     {
-      "id": "team-core-3",
+      "id": "shristi",
       "description": "Portrait of a core team member",
-      "imageUrl": "https://images.unsplash.com/photo-1554774853-719586f82d77?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx3b21hbiUyMHRlY2hub2xvZ3l8ZW58MHx8fHwxNzYyODU0MDUzfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://raw.githubusercontent.com/AI-ash/Tech-A-Thon-Photos/main/Teams/shrishti.png",
       "imageHint": "woman technology"
     },
     {
-      "id": "team-core-4",
+      "id": "anushka",
+      "description": "Portrait of a core team member",
+      "imageUrl": "https://raw.githubusercontent.com/AI-ash/Tech-A-Thon-Photos/main/Teams/anushka.jpg",
+      "imageHint": "man portrait"
+    },
+    {
+      "id": "sourav",
+      "description": "Portrait of a core team member",
+      "imageUrl": "https://raw.githubusercontent.com/AI-ash/Tech-A-Thon-Photos/main/Teams/sourav.jpg",
+      "imageHint": "man portrait"
+    },
+    {
+      "id": "divyansh",
+      "description": "Portrait of a core team member",
+      "imageUrl": "https://raw.githubusercontent.com/AI-ash/Tech-A-Thon-Photos/main/Teams/Ashish%20Sharma%20removed%20bg.png",
+      "imageHint": "man portrait"
+    },
+    {
+      "id": "ananya",
+      "description": "Portrait of a core team member",
+      "imageUrl": "https://raw.githubusercontent.com/AI-ash/Tech-A-Thon-Photos/main/Teams/Ananya%20Mishra.png",
+      "imageHint": "man portrait"
+    },
+    {
+      "id": "ashish",
+      "description": "Portrait of a core team member",
+      "imageUrl": "https://raw.githubusercontent.com/AI-ash/Tech-A-Thon-Photos/main/Teams/Ashish%20Sharma.JPG",
+      "imageHint": "man portrait"
+    },
+    {
+      "id": "janvi",
       "description": "Portrait of a core team member",
       "imageUrl": "https://raw.githubusercontent.com/AI-ash/Tech-A-Thon-Photos/main/Teams/Ananya%20Mishra.png",
       "imageHint": "man portrait"
