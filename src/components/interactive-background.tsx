@@ -13,7 +13,7 @@ type TechBackgroundProps = {
 
 export default function InteractiveBackground({
   particleCount = 90,
-  colorPalette = ['#7DF9FF', '#39FF14', '#f0f'],
+  colorPalette = ['#7DF9FF', '#39FF14', '#F000FF'],
   lineThreshold = 130,
   cursorRadius = 160,
   className,
