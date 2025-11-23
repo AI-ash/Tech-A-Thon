@@ -173,7 +173,7 @@ body {
   }
   
   .loader {
-    --main-size: 4em;
+    --main-size: 6em;
     --text-color: hsl(var(--foreground));
     --shine-color: hsl(var(--foreground) / 0.4);
     --shadow-color: hsl(var(--muted-foreground));
