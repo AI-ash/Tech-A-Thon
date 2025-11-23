@@ -22,7 +22,7 @@ type Particle = {
 
 export default function InteractiveBackground({
   particleCount = 90,
-  colorPalette = ['#7DF9FF', '#39FF14', '#F000FF'],
+  colorPalette = ['#00FFFF', '#8A2BE2', '#7FFF00', '#FF1493'],
   lineThreshold = 130,
   cursorRadius = 160,
   className,
@@ -38,8 +38,9 @@ export default function InteractiveBackground({
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
+    let DPR = window.devicePixelRatio || 1;
+
     const setSize = () => {
-      const DPR = window.devicePixelRatio || 1;
       const w = canvas.clientWidth;
       const h = canvas.clientHeight;
       if (canvas.width !== w * DPR || canvas.height !== h * DPR) {
@@ -55,7 +56,8 @@ export default function InteractiveBackground({
       const w = canvas?.clientWidth ?? 0;
       const h = canvas?.clientHeight ?? 0;
       const newParticles: Particle[] = [];
-      for (let i = 0; i < particleCount; i++) {
+      const count = window.innerWidth < 768 ? Math.floor(particleCount * 0.5) : particleCount;
+      for (let i = 0; i < count; i++) {
         newParticles.push({
           x: rand(0, w),
           y: rand(0, h),
@@ -128,9 +130,9 @@ export default function InteractiveBackground({
           if (d2 < lineThreshold * lineThreshold) {
             let alpha = 1 - Math.sqrt(d2) / lineThreshold;
 
-            if (cursor.current.x !== null) {
+            if (cursor.current.x !== null && cursor.current.y !== null) {
               const cdx = (a.x + b.x) / 2 - cursor.current.x;
-              const cdy = (a.y + b.y) / 2 - cursor.current.y!;
+              const cdy = (a.y + b.y) / 2 - cursor.current.y;
               const cd = Math.sqrt(cdx * cdx + cdy * cdy);
               if (cd < cursorRadius) alpha *= 1.8;
             }
@@ -184,6 +186,7 @@ export default function InteractiveBackground({
     };
 
     const handleWindowResize = () => {
+      DPR = window.devicePixelRatio || 1;
       setSize();
       makeParticles();
     };
