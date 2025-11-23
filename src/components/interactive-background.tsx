@@ -153,10 +153,6 @@ export default function InteractiveBackground({
       rafRef.current = requestAnimationFrame(step);
     }
 
-    resize();
-    makeParticles();
-    step();
-
     const handleMouseMove = (e: MouseEvent) => {
       if (!canvas) return;
       const rect = canvas.getBoundingClientRect();
@@ -174,6 +170,10 @@ export default function InteractiveBackground({
         resize();
         makeParticles();
     }
+    
+    resize();
+    makeParticles();
+    step();
 
     window.addEventListener('mousemove', handleMouseMove);
     window.addEventListener('mouseleave', handleMouseLeave);
@@ -196,3 +196,5 @@ export default function InteractiveBackground({
     </div>
   );
 }
+
+    
