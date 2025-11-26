@@ -147,8 +147,8 @@ export const team: TeamMember[] = [
     position: "Non-Techical Head",
     bio: "Handles social media presence and outreach programs.",
     image: "divyansh",
-    email: "example@gmail.com",
-    linkedin: "https://linkedin.com/in/username",
+    email: "diivyanshjoshi@gmail.com",
+    linkedin: "https://linkedin.com/in/diivyanshjoshi/",
   },
   {
     name: "Ananya Mishra",
@@ -174,8 +174,8 @@ export const team: TeamMember[] = [
     position: "Creative Head",
     bio: "Handles social media presence and outreach programs.",
     image: "janvi",
-    email: "example@gmail.com",
-    linkedin: "https://linkedin.com/in/username",
+    email: "mongajanvi92@gmail.com",
+    linkedin: "https://linkedin.com/in/janvi-monga-56206b330/",
   },
 ];
 
@@ -189,6 +189,7 @@ export const memberOfTheMonth = {
 export const galleryImages = [
   "gallery-1", "gallery-2", "gallery-3", "gallery-4",
   "gallery-5", "gallery-6", "gallery-7", "gallery-8"
+  "gallery-9", "gallery-10", "gallery-11", "gallery-12"
 ];
 
 export const reviews: Review[] = [
