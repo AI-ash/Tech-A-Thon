@@ -12,23 +12,26 @@ export default function GalleryPage() {
         description="A visual journey through our events, workshops, and memorable moments. This is the life of TechAthon in pictures."
       />
       <AnimatedSection className="container pb-16 md:pb-24">
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        <div
+          className="columns-2 md:columns-3 lg:columns-4 gap-4 space-y-4"
+        >
           {galleryImages.map((id, index) => {
-            const image = placeholderData.placeholderImages.find(p => p.id === id);
+            const image = placeholderData.placeholderImages.find(
+              (p) => p.id === id
+            );
             return image ? (
               <div
                 key={index}
-                className="relative aspect-square overflow-hidden rounded-lg group"
+                className="overflow-hidden rounded-lg group block"
               >
                 <Image
                   src={image.imageUrl}
                   alt={image.description}
-                  fill
-                  className="object-cover transition-transform duration-300 ease-in-out group-hover:scale-105"
+                  width={600}
+                  height={400}
+                  className="object-cover w-full h-auto transition-transform duration-300 ease-in-out group-hover:scale-105"
                   data-ai-hint={image.imageHint}
-                  sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
                 />
-                <div className="absolute inset-0 bg-black/20 transition-opacity duration-300 group-hover:opacity-0" />
               </div>
             ) : null;
           })}
