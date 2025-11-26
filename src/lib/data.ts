@@ -188,7 +188,7 @@ export const memberOfTheMonth = {
 
 export const galleryImages = [
   "gallery-1", "gallery-2", "gallery-3", "gallery-4",
-  "gallery-5", "gallery-6", "gallery-7", "gallery-8"
+  "gallery-5", "gallery-6", "gallery-7", "gallery-8",
   "gallery-9", "gallery-10", "gallery-11", "gallery-12"
 ];
 
