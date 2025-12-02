@@ -73,8 +73,8 @@ export const team: TeamMember[] = [
     name: "Mr. Dharmendra Singh ",
     role: "Faculty Coordinator",
     position: "Association In-charge",
-    bio: "Guiding the society with years of academic and research experience.",
-    image: "team-faculty-1",
+    bio: "A dedicated academic leader providing strategic guidance and fostering a strong culture of learning within the society. His extensive experience ensures smooth coordination and meaningful growth.",
+    image: "dharmendra",
     email: "example@gmail.com",
     linkedin: "https://linkedin.com/in/username",
   },
@@ -82,19 +82,19 @@ export const team: TeamMember[] = [
     name: "Mr. Mahesh Kumar ",
     role: "Faculty Coordinator",
     position: "Teacher In-charge",
-    bio: "Providing mentorship and support for all technical activities.",
-    image: "team-faculty-2",
-    email: "example@gmail.com",
-    linkedin: "https://linkedin.com/in/username",
+    bio: "A supportive mentor who oversees academic and technical initiatives with clarity and commitment. His leadership strengthens the society’s direction and execution of key activities.",
+    image: "mahesh",
+    email: "maheshkumar@arsd.du.ac.in",
+    linkedin: "https://www.linkedin.com/in/mahesh-kumar-bhandari-0a9a08197/",
   },
   {
     name: "Mr. Jag Mohan",
     role: "Faculty Coordinator",
     position: "Seminar In-charge",
-    bio: "Providing mentorship and support for all technical activities.",
-    image: "team-faculty-3",
+    bio: "An experienced faculty member who leads seminar initiatives with precision and thoughtful mentorship. His involvement enhances the society’s academic engagement and event quality.",
+    image: "jag",
     email: "example@gmail.com",
-    linkedin: "https://linkedin.com/in/username",
+    linkedin: "https://www.linkedin.com/in/jag-mohan-1337b412/",
   },
   {
     name: "Aditi Tripathi",
@@ -190,30 +190,31 @@ export const galleryImages = [
   "gallery-1", "gallery-2", "gallery-3", "gallery-4",
   "gallery-5", "gallery-6", "gallery-7", "gallery-8",
   "gallery-9", "gallery-10", "gallery-11", "gallery-12",
-  "gallery-13", "gallery-14",
+  "gallery-13", "gallery-14","gallery-15", "gallery-16",
+  "gallery-17", "gallery-18","gallery-19", "gallery-20",
 ];
 
 export const reviews: Review[] = [
   {
-    name: "Aarav Kumar",
-    position: "2nd Year, B.Sc Physical science with CS",
-    review: "TechAthon has been a game-changer for me. The workshops are incredibly insightful and the community is super supportive.",
+    name: "Aditya kumar",
+    position: "4th Year, B.Sc Physical science with CS",
+    review: "Being a part of CS society Techathon has been an incredible journey. Serving as Technical Team Coordinator, allowed me to gain invaluable experiences, enhance my skills, and collaborating with talented individuals.",
     rating: 5,
-    image: "reviewer-1"
+    image: "aditya"
   },
   {
-    name: "Saanvi Jha",
+    name: "Aditi",
     position: "3rd Year, B.Sc (H) CS",
-    review: "Being part of the core team taught me so much about leadership and project management. It's more than just a tech society.",
+    review: "Loved being a part of the Tech-A-Thon Society! The workshops and Sanganak Vimarsh (annual fest ) are fun, interactive, and very useful. I learned so much and met amazing people who share the same interests.",
     rating: 5,
-    image: "reviewer-2"
+    image: "aditi  "
   },
   {
-    name: "Aditya Rajput",
-    position: "Alumnus",
-    review: "The hands-on project experience I got at TechAthon was invaluable for my career. Highly recommend it to all students.",
+    name: "Adarsh",
+    position: "4th Year, B.Sc Physical science with CS",
+    review: "In Tech-A-Thon, I made friends for life, learned from amazing people. Even a year after graduating, I still reach out for advice and share laughs with fellow members.",
     rating: 4,
-    image: "reviewer-3"
+    image: "adarsh"
   }
 ];
 
