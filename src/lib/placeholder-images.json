@@ -27,7 +27,7 @@
     {
       "id": "ar main",
       "description": "A creative tech-themed poster design",
-      "imageUrl": "https://raw.githubusercontent.com/AI-ash/Tech-A-Thon-Photos/main/Events/AI%20x%20AR%20workshop/main_(copy).jpg",
+      "imageUrl": "https://raw.githubusercontent.com/AI-ash/Tech-A-Thon-Photos/main/Events/AI%20x%20AR%20workshop/main.jpg",
       "imageHint": "graphic design"
     },
     {
@@ -55,19 +55,19 @@
       "imageHint": "graphic design"
     },
     {
-      "id": "dharmendra sir",
+      "id": "dharmendra",
       "description": "Portrait of a faculty coordinator",
       "imageUrl": "https://raw.githubusercontent.com/AI-ash/Tech-A-Thon-Photos",
       "imageHint": "professor portrait"
     },
     {
-      "id": "mahesh sir",
+      "id": "mahesh",
       "description": "Portrait of a faculty coordinator",
       "imageUrl": "https://raw.githubusercontent.com/AI-ash/Tech-A-Thon-Photos",
       "imageHint": "teacher smiling"
     },
     {
-      "id": "jag mohan sir",
+      "id": "jag",
       "description": "Portrait of a faculty coordinator",
       "imageUrl": "https://raw.githubusercontent.com/AI-ash/Tech-A-Thon-Photos/main/faculty/jag%20mohan%20sir.jpg",
       "imageHint": "teacher smiling"
@@ -177,7 +177,7 @@
     {
       "id": "gallery-9",
       "description": "Photo from a society event",
-      "imageUrl": "https://raw.githubusercontent.com/AI-ash/Tech-A-Thon-Photos/main/Events/AI%20driven%20drone/IMG_3615.jpg",
+      "imageUrl": "https://raw.githubusercontent.com/AI-ash/Tech-A-Thon-Photos/main/Events/ml%20workshop/ml%20d2.jpg",
       "imageHint": "networking event"
     },
     {
@@ -195,7 +195,7 @@
     {
       "id": "gallery-12",
       "description": "Photo from a society event",
-      "imageUrl": "https://raw.githubusercontent.com/AI-ash/Tech-A-Thon-Photos/main/Events/ml%20workshop/ml%20d1_2.jpg",
+      "imageUrl": "https://raw.githubusercontent.com/AI-ash/Tech-A-Thon-Photos/main/Events/AI%20x%20AR%20workshop/IMG_0651.jpg",
       "imageHint": "networking event"
     },
     {
@@ -211,21 +211,51 @@
       "imageHint": "networking event"
     },
     {
-      "id": "reviewer-1",
+      "id": "gallery-15",
+      "description": "Photo from a society event",
+      "imageUrl": "https://raw.githubusercontent.com/AI-ash/Tech-A-Thon-Photos/main/Gallery/random5.jpg",
+      "imageHint": "networking event"
+    },
+    {
+      "id": "gallery-16",
+      "description": "Photo from a society event",
+      "imageUrl": "https://raw.githubusercontent.com/AI-ash/Tech-A-Thon-Photos/main/Gallery/random6.jpg",
+      "imageHint": "networking event"
+    },
+    {
+      "id": "gallery-17",
+      "description": "Photo from a society event",
+      "imageUrl": "https://raw.githubusercontent.com/AI-ash/Tech-A-Thon-Photos/main/Gallery/random7jpg",
+      "imageHint": "networking event"
+    },
+    {
+      "id": "gallery-18",
+      "description": "Photo from a society event",
+      "imageUrl": "https://raw.githubusercontent.com/AI-ash/Tech-A-Thon-Photos/main/Gallery/random8.jpg",
+      "imageHint": "networking event"
+    },
+    {
+      "id": "gallery-19",
+      "description": "Photo from a society event",
+      "imageUrl": "https://raw.githubusercontent.com/AI-ash/Tech-A-Thon-Photos/main/Gallery/random9.jpg",
+      "imageHint": "networking event"
+    },
+    {
+      "id": "aditya",
       "description": "Portrait of a happy student",
-      "imageUrl": "https://images.unsplash.com/photo-1581009137052-c0b3887a1339?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxtYWxlJTIwc3R1ZGVudCUyMHBvcnRyYWl0fGVufDB8fHx8MTc2MTM5Mzk1MXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://raw.githubusercontent.com/AI-ash/Tech-A-Thon-Photos/main/reviewers/aditya.jpg",
       "imageHint": "student portrait"
     },
     {
-      "id": "reviewer-2",
+      "id": "aditi",
       "description": "Portrait of a smiling student",
-      "imageUrl": "https://images.unsplash.com/photo-1580489944761-15a19d654956?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxwb3J0cmFpdCUyMHdvbWFufGVufDB8fHx8MTc2MTM0OTk5OHww&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://raw.githubusercontent.com/AI-ash/Tech-A-Thon-Photos/main/reviewers/aditi.jpg",
       "imageHint": "woman portrait"
     },
     {
-      "id": "reviewer-3",
+      "id": "adarsh",
       "description": "Portrait of a professional person",
-      "imageUrl": "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxtYW4lMjBwb3J0cmFpdHxlbnwwfHx8fDE3NjEzODc4Mjl8MA&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://raw.githubusercontent.com/AI-ash/Tech-A-Thon-Photos/main/reviewers/adarsh.jpg",
       "imageHint": "man portrait"
     }
   ]
