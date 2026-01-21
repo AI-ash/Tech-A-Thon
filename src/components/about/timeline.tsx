@@ -1,4 +1,7 @@
+"use client";
+
 import { Terminal } from "lucide-react";
+import { motion } from "framer-motion";
 
 const timelineEvents = [
   {
@@ -31,37 +34,67 @@ const timelineEvents = [
 export function Timeline() {
   return (
     <div className="relative max-w-2xl mx-auto">
-      <div className="absolute left-1/2 -translate-x-1/2 h-full w-0.5 bg-border"></div>
-      {timelineEvents.map((event, index) => (
-        <div
-          key={index}
-          className={`relative mb-8 flex items-center w-full ${
-            index % 2 === 0 ? "flex-row-reverse" : ""
-          }`}
-        >
-          <div className="w-1/2"></div>
-          <div className="absolute left-1/2 -translate-x-1/2 z-10">
-            <div className="bg-background border-2 border-primary rounded-full p-2">
-              <Terminal className="h-5 w-5 text-primary" />
+      {/* Vertical line */}
+      <div className="absolute left-1/2 -translate-x-1/2 h-full w-0.5 bg-border" />
+
+      {timelineEvents.map((event, index) => {
+        const isRight = index % 2 === 0;
+
+        return (
+          <motion.div
+            key={index}
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{
+              duration: 0.6,
+              ease: "easeOut",
+            }}
+            className={`relative mb-10 flex items-center w-full ${
+              isRight ? "flex-row-reverse" : ""
+            }`}
+          >
+            {/* Empty side */}
+            <div className="w-1/2" />
+
+            {/* Center icon */}
+            <div className="absolute left-1/2 -translate-x-1/2 z-10">
+              <div className="bg-background border-2 border-primary rounded-full p-2">
+                <Terminal className="h-5 w-5 text-primary" />
+              </div>
             </div>
-          </div>
-          <div className="w-1/2 px-4">
-            <div
-              className={`p-4 rounded-lg bg-secondary/60 border border-border ${
-                index % 2 === 0 ? "text-right" : "text-left"
-              }`}
+
+            {/* Card */}
+            <motion.div
+              initial={{ opacity: 0, x: isRight ? 40 : -40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{
+                duration: 0.6,
+                delay: 0.1,
+                ease: "easeOut",
+              }}
+              className="w-1/2 px-4"
             >
-              <p className="font-headline text-primary text-lg font-bold">
-                {event.year}
-              </p>
-              <h3 className="font-bold text-lg mb-1">{event.title}</h3>
-              <p className="text-sm text-muted-foreground font-mono">
-                {event.description}
-              </p>
-            </div>
-          </div>
-        </div>
-      ))}
+              <div
+                className={`p-4 rounded-lg bg-secondary/60 border border-border ${
+                  isRight ? "text-right" : "text-left"
+                }`}
+              >
+                <p className="font-headline text-primary text-lg font-bold">
+                  {event.year}
+                </p>
+                <h3 className="font-bold text-lg mb-1">
+                  {event.title}
+                </h3>
+                <p className="text-sm text-muted-foreground font-mono">
+                  {event.description}
+                </p>
+              </div>
+            </motion.div>
+          </motion.div>
+        );
+      })}
     </div>
   );
 }

@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useSearchParams } from "next/navigation";
 import Image from "next/image";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -12,7 +13,17 @@ import { Calendar } from "lucide-react";
 const eventTypes: EventType[] = ["Competition", "Seminar", "Workshop", "Visit"];
 
 export default function EventList({ events }: { events: Event[] }) {
+  const searchParams = useSearchParams();
+  const urlType = searchParams.get("type") as EventType | "All";
+
   const [filter, setFilter] = useState<EventType | "All">("All");
+
+  // sync URL → state
+  useEffect(() => {
+    if (urlType && (urlType === "All" || eventTypes.includes(urlType))) {
+      setFilter(urlType);
+    }
+  }, [urlType]);
 
   const filteredEvents =
     filter === "All" ? events : events.filter((event) => event.type === filter);

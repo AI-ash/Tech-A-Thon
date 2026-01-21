@@ -1,4 +1,7 @@
+"use client";
+
 import React from "react";
+import { useRouter } from 'next/navigation';
 
 const Logo = ({ className }) => (
   <svg
@@ -102,7 +105,7 @@ const CustomLink = ({ href, children, className, target, rel }) => (
 
 export default function TechAthonFooter() {
   const currentYear = new Date().getFullYear();
-
+  const router = useRouter();
   return (
     <footer className="w-full border-t border-border/40 bg-background">
       <div className="container mx-auto px-4 py-12">
@@ -130,25 +133,25 @@ export default function TechAthonFooter() {
             </h3>
             <nav className="flex flex-col gap-2">
               <CustomLink
-                href="#about"
+                href="/about"
                 className="text-sm text-muted-foreground transition-colors hover:text-primary font-mono"
               >
                 About Us
               </CustomLink>
               <CustomLink
-                href="#team"
+                href="/team"
                 className="text-sm text-muted-foreground transition-colors hover:text-primary font-mono"
               >
                 Our Team
               </CustomLink>
               <CustomLink
-                href="#gallery"
+                href="/gallery"
                 className="text-sm text-muted-foreground transition-colors hover:text-primary font-mono"
               >
                 Gallery
               </CustomLink>
               <CustomLink
-                href="#contact"
+                href="/contact"
                 className="text-sm text-muted-foreground transition-colors hover:text-primary font-mono"
               >
                 Contact
@@ -161,32 +164,36 @@ export default function TechAthonFooter() {
               Events & Programs
             </h3>
             <nav className="flex flex-col gap-2">
-              <CustomLink
-                href="#hackathons"
-                className="text-sm text-muted-foreground transition-colors hover:text-primary font-mono"
-              >
-                Weekly Hackathons
-              </CustomLink>
-              <CustomLink
-                href="#workshops"
-                className="text-sm text-muted-foreground transition-colors hover:text-primary font-mono"
-              >
-                Workshops
-              </CustomLink>
-              <CustomLink
-                href="#seminars"
-                className="text-sm text-muted-foreground transition-colors hover:text-primary font-mono"
-              >
-                Seminars
-              </CustomLink>
-              <CustomLink
-                href="#competitions"
-                className="text-sm text-muted-foreground transition-colors hover:text-primary font-mono"
-              >
-                Competitions
-              </CustomLink>
-            </nav>
-          </div>
+              <button
+            onClick={() => router.push("/events?type=Competition")}
+            className="text-left text-sm text-muted-foreground transition-colors hover:text-primary font-mono"
+          >
+            Competitions
+          </button>
+
+          <button
+            onClick={() => router.push("/events?type=Workshop")}
+            className="text-left text-sm text-muted-foreground transition-colors hover:text-primary font-mono"
+          >
+            Workshops
+          </button>
+
+          <button
+            onClick={() => router.push("/events?type=Seminar")}
+            className="text-left text-sm text-muted-foreground transition-colors hover:text-primary font-mono"
+          >
+            Seminars
+          </button>
+
+          <button
+            onClick={() => router.push("/events?type=Visit")}
+            className="text-left text-sm text-muted-foreground transition-colors hover:text-primary font-mono"
+          >
+            Visits
+          </button>
+
+        </nav>
+      </div>
 
           <div className="flex flex-col gap-4">
             <h3 className="text-sm font-semibold uppercase tracking-wider">
@@ -254,33 +261,6 @@ export default function TechAthonFooter() {
           <p className="text-center text-sm leading-loose text-muted-foreground font-mono md:text-left">
             © {currentYear} Tech-A-Thon All rights reserved.
           </p>
-
-          <div className="flex items-center gap-4">
-            <CustomLink
-              href="#privacy"
-              className="text-sm text-muted-foreground transition-colors hover:text-primary font-mono"
-            >
-              Privacy Policy
-            </CustomLink>
-
-            <span className="text-muted-foreground">•</span>
-
-            <CustomLink
-              href="#terms"
-              className="text-sm text-muted-foreground transition-colors hover:text-primary font-mono"
-            >
-              Terms of Service
-            </CustomLink>
-
-            <span className="text-muted-foreground">•</span>
-
-            <CustomLink
-              href="#code-of-conduct"
-              className="text-sm text-muted-foreground transition-colors hover:text-primary font-mono"
-            >
-              Code of Conduct
-            </CustomLink>
-          </div>
         </div>
       </div>
     </footer>
