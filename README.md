@@ -1,5 +1,4 @@
 # TechAthon - Computer Science Society Website
-
 <p align="center">
   <img src="https://raw.githubusercontent.com/firebase/genkit/main/docs/static/logo.png" alt="Genkit Logo" width="120">
 </p>
@@ -114,9 +113,7 @@ The codebase is organized to separate concerns and maintain scalability.
 ├── tailwind.config.ts      # Tailwind CSS configuration
 └── tsconfig.json           # TypeScript configuration
 ```
-
 ---
-
 ## 🤖 AI Integration with Genkit
 
 This project uses **Genkit** to integrate with the Google Gemini family of models. The primary AI feature is:
